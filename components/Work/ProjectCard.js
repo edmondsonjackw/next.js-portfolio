@@ -5,20 +5,15 @@ import Anchor from "../Anchor";
 import arrow from "next/image";
 import lightModeIcon from "next/image";
 import darkModeIcon from "next/image";
+import ProjectDetailsModal from "./ProjectDetailsModal";
 
-function WorkCard(props) {
-  // const [toggleDarkMode, setToggleDarkMode] = useState(false);
+function ProjectCard(props) {
+  const [displayProjectDetails, setDisplayProjectDetails] = useState(false);
 
-  // function handleDark(e) {
-  //   setToggleDarkMode(prev => !prev);
-  //   // localStorage.setItem("mode", toggleDarkMode ? "light" : "dark");
-  //   e.preventDefault();
-  //   // if (toggleDarkMode) {
-  //   //   return <Image src="/light-mode.svg" width="24" height="24" />
-  //   // } else {
-  //   //   <Image src="/dark-mode.svg" width="24" height="24" />
-  //   // }
-  // }
+  function toggleDisplayProjectDetails(e) {
+    e.preventDefault();
+    setDisplayProjectDetails(!displayProjectDetails);
+  }
 
   return (
     <div className="flex flex-col justify-between w-full ">
@@ -29,38 +24,50 @@ function WorkCard(props) {
           href={props.href}
           name="projectLink"
           src="/project-arrow.svg"
-          width="65"
-          height="65"
+          width="24"
+          height="24"
           target="_blank"
         />
         <h3 className="py-5">{props.title}</h3>
 
         {/* <Image src="/project-arrow.svg" width="65" height="65" /> */}
-        <Button name="expand" value="●●●" />
+        <Button
+          name="expand"
+          value="●●●"
+          handleModal={props.handleModal}
+          id={props.id}
+        />
       </div>
-      {props.displayDarkModeToggle && !props.darkMode ? (
-        <Button
-          icon={lightModeIcon}
-          name="toggleDark"
-          src="/light-mode.svg"
-          width="24"
-          height="24"
-          onClick={props.handleDark}
-        />
-      ) : props.displayDarkModeToggle && props.darkMode ? (
-        <Button
-          icon={darkModeIcon}
-          name="toggleDark"
-          src="/dark-mode.svg"
-          width="24"
-          height="24"
-          onClick={props.handleDark}
-        />
-      ) : (
-        ""
-      )}
+
+      <div className="w-full flex justify-center mb-5">
+        {props.displayDarkModeToggle && !props.darkMode ? (
+          <Button
+            icon={lightModeIcon}
+            name="toggleDark"
+            src="/light-mode.svg"
+            width="32"
+            height="32"
+            handleDark={props.handleDark}
+          />
+        ) : props.displayDarkModeToggle && props.darkMode ? (
+          <Button
+            icon={darkModeIcon}
+            name="toggleDark"
+            src="/dark-mode.svg"
+            width="32"
+            height="32"
+            handleDark={props.handleDark}
+          />
+        ) : (
+          ""
+        )}
+      </div>
 
       <div className="">
+        <ProjectDetailsModal
+          description={props.description}
+          resources={props.resources}
+        />
         <Image
           src={props.src}
           alt=""
@@ -74,4 +81,4 @@ function WorkCard(props) {
   );
 }
 
-export default WorkCard;
+export default ProjectCard;

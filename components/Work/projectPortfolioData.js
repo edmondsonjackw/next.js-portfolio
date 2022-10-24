@@ -1,10 +1,16 @@
-export const workPortfolioData = [
+export const projectPortfolioData = [
   {
     id: 1,
     title: "Expenses Tracker",
+    resources: ["HTML", "CSS", "REACTJS", "FIREBASE"],
+    // resources: {
+    //   HTML: "html",
+    //   CSS: "css",
+    // },
+    description: "",
     src: {
       light: "/expenses-tracker-1.svg",
-      dark: "/expenses-tracker-2-dark.png",
+      dark: "/expenses-tracker-1-dark.PNG",
     },
     displayDarkModeToggle: "displayDarkModeToggle",
     href: "https://expenses-tracker-je.netlify.app/",
@@ -12,6 +18,8 @@ export const workPortfolioData = [
   {
     id: 2,
     title: "Text To Typecript",
+    resources: ["HTML", "CSS", "FIREBASE"],
+    description: "",
     src: "/expenses-tracker-2.png",
     darkMode: "",
     href: "",
@@ -19,6 +27,8 @@ export const workPortfolioData = [
   {
     id: 3,
     title: "Meme Generator",
+    resources: "",
+    description: "",
     src: "/expenses-tracker-3.png",
     darkMode: "",
     href: "",
@@ -26,6 +36,8 @@ export const workPortfolioData = [
   {
     id: 4,
     title: "Tenzies Game",
+    resources: "",
+    description: "",
     src: "/expenses-tracker-4.png",
     darkMode: "",
     href: "",

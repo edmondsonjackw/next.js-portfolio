@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import Anchor from "../components/Anchor";
-import { workPortfolioData } from "../components/Work/WorkPortfolioData.js";
+import { projectPortfolioData } from "../components/Work/projectPortfolioData.js";
 import ProjectCard from "../components/Work/ProjectCard";
+import Button from "../components/Button";
 
 function Work() {
   const [displayedWork, setDisplayedWork] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
+  const [currentProjectId, setCurrentProjectId] = useState("");
+  const [displayProjectDetailsModal, setDisplayProjectDetailsModal] =
+    useState(false);
 
   function workSelector(e) {
     e.preventDefault();
@@ -18,24 +22,49 @@ function Work() {
     // localStorage.setItem("mode", toggleDarkMode ? "light" : "dark");
   }
 
-  const portfolioArray = workPortfolioData.map(project => (
+  function findCurrentNote(id) {
+    return (
+      project.find(project => {
+        return project.id === currentProjectId;
+      }) || project[0]
+    );
+  }
+
+  function handleModal(e, id) {
+    e.preventDefault();
+    setDisplayProjectDetailsModal(prev => !prev);
+    findCurrentNote();
+  }
+
+  const portfolioArray = projectPortfolioData.map(project => (
     <ProjectCard
-      title={project.title}
-      src={!darkMode ? project.src[1] : project.src[0]}
-      // src={project.src}
       key={project.id}
+      title={project.title}
+      resources={project.resources}
+      src={
+        !darkMode && project.displayDarkModeToggle
+          ? project.src.light
+          : darkMode && project.displayDarkModeToggle
+          ? project.src.dark
+          : project.src
+      }
       displayDarkModeToggle={project.displayDarkModeToggle}
       href={project.href}
       darkMode={darkMode}
       handleDark={handleDark}
+      handleModal={handleModal}
+
+      // currentProjectId={findCurrentNote()}
     />
   ));
-
+  console.log(currentProjectId);
   return (
     <>
       <div className="flex justify-center space-x-4 my-10 ">
-        <Anchor name={"Web Development"} value={"Web Development"} border />
-        <Anchor name={"Photography"} value={"Photography"} border />
+        <Button name={"Web Development"} value={"Web Development"} border />
+        <Button name={"Photography"} value={"Photography"} border />
+        {/* <Anchor name={"Web Development"} value={"Web Development"} border />
+        <Anchor name={"Photography"} value={"Photography"} border /> */}
       </div>
       {portfolioArray}
     </>

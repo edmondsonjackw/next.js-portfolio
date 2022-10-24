@@ -3,12 +3,18 @@ import Image from "next/image";
 
 function Button(props) {
   return (
-    <div>
+    <>
       <button
-        className={`w-fit flex justify-between items-center space-5 bg-transparent hover:bg-gray-700  rounded-lg py-2 px-4 cursor-pointer ${
+        className={`w-fit flex justify-between items-center space-5 bg-transparent hover:bg-gray-700 rounded-lg py-2 px-4 cursor-pointer ${
           props.border ? "border-primary border-2" : ""
         }`}
-        onClick={props.onClick}
+        onClick={
+          props.darkMode
+            ? props.handleDark
+            : props.handleModal
+            ? props.handleModal
+            : ""
+        }
         name={props.name}
         disabled={props.disabled}
       >
@@ -26,7 +32,7 @@ function Button(props) {
 
         {props.value}
       </button>
-    </div>
+    </>
   );
 }
 
