@@ -5,6 +5,8 @@ import Anchor from "../Anchor";
 import arrow from "next/image";
 import lightModeIcon from "next/image";
 import darkModeIcon from "next/image";
+import chevronLeft from "next/image";
+import chevronRight from "next/image";
 import ProjectDetailsModal from "./ProjectDetailsModal";
 
 function ProjectCard(props) {
@@ -63,19 +65,29 @@ function ProjectCard(props) {
         )}
       </div>
 
-      <div className="">
-        <ProjectDetailsModal
-          description={props.description}
-          resources={props.resources}
-        />
-        <Image
-          src={props.src}
-          alt=""
-          width="100%"
-          height="50%"
-          layout="responsive"
-          objectFit="contain"
-        />
+      <div className="flex justify-center">
+        <Image src="/chevron-left.svg" width="32" height="32" />
+        <div className="w-full">
+          <Image
+            src={props.src}
+            alt=""
+            width="100%"
+            height="50%"
+            layout="responsive"
+            objectFit="contain"
+          />
+          {props.displayProjectDetailsModal &&
+            props.currentProjectId === props.currentProject.id && (
+              <ProjectDetailsModal
+                resources={props.resources}
+                description={props.description}
+                handleModal={props.handleModal}
+                currentProjectId={props.currentProjectId}
+                currentProject={props.currentProject}
+              />
+            )}
+        </div>
+        <Image src="/chevron-right.svg" width="32" height="32" />
       </div>
     </div>
   );

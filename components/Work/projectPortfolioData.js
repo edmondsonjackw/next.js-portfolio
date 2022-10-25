@@ -4,10 +4,10 @@ export const projectPortfolioData = [
     title: "Expenses Tracker",
     resources: ["HTML", "CSS", "REACTJS", "FIREBASE"],
     // resources: {
-    //   HTML: "html",
-    //   CSS: "css",
+    //   "HTML": "html",
+    //   "CSS": "css",
     // },
-    description: "",
+    description: "Number 11",
     src: {
       light: "/expenses-tracker-1.svg",
       dark: "/expenses-tracker-1-dark.PNG",
@@ -17,9 +17,9 @@ export const projectPortfolioData = [
   },
   {
     id: 2,
-    title: "Text To Typecript",
-    resources: ["HTML", "CSS", "FIREBASE"],
-    description: "",
+    title: "Text To Markdown",
+    resources: ["1", "1", "1"],
+    description: "Number 22",
     src: "/expenses-tracker-2.png",
     darkMode: "",
     href: "",
@@ -27,8 +27,8 @@ export const projectPortfolioData = [
   {
     id: 3,
     title: "Meme Generator",
-    resources: "",
-    description: "",
+    resources: ["2", "2", "2"],
+    description: "Number 33",
     src: "/expenses-tracker-3.png",
     darkMode: "",
     href: "",
@@ -36,10 +36,10 @@ export const projectPortfolioData = [
   {
     id: 4,
     title: "Tenzies Game",
-    resources: "",
+    resources: ["3", "3", "3"],
     description: "",
     src: "/expenses-tracker-4.png",
-    darkMode: "",
+    description: "Number 44",
     href: "",
   },
 ];

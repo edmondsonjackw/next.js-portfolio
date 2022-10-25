@@ -27,7 +27,7 @@ function Main() {
           name="About"
           href="https://www.linkedin.com/in/jackedmondson/"
           icon={linkedIn}
-          src={"/linkedin1-icon.svg"}
+          src="/linkedin1-icon.svg"
           width="24"
           height="24"
           fill="white"

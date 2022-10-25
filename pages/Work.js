@@ -1,20 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Anchor from "../components/Anchor";
 import { projectPortfolioData } from "../components/Work/projectPortfolioData.js";
 import ProjectCard from "../components/Work/ProjectCard";
 import Button from "../components/Button";
 
 function Work() {
-  const [displayedWork, setDisplayedWork] = useState(true);
+  // const [displayedWork, setDisplayedWork] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
+  const [currentProject, setCurrentProject] = useState("");
   const [currentProjectId, setCurrentProjectId] = useState("");
   const [displayProjectDetailsModal, setDisplayProjectDetailsModal] =
     useState(false);
+  const [portfolioData, setPortfolioData] = useState(projectPortfolioData);
+  // const [projectData, setProjectData] = useState();
+  console.log(portfolioData);
+  // useEffect(() => {
+  //   const projectDataArray = projectPortfolioData.splice(
+  //     currentProjectId,
+  //     projectPortfolioData - 1
+  //   );
+  //   setProjectData(projectDataArray);
+  // }, [currentProjectId]);
 
-  function workSelector(e) {
-    e.preventDefault();
-    setDisplayedWork(!displayedWork);
-  }
+  // projectPortfolioData.splice(
+  //   currentProjectId,
+  //   projectPortfolioData.length - 1
+  // );
+
+  // function workSelector(e) {
+  //   e.preventDefault();
+  //   setDisplayedWork(!displayedWork);
+  // }
 
   function handleDark(e) {
     e.preventDefault();
@@ -22,7 +38,7 @@ function Work() {
     // localStorage.setItem("mode", toggleDarkMode ? "light" : "dark");
   }
 
-  function findCurrentNote(id) {
+  function findCurrentNote(id, project) {
     return (
       project.find(project => {
         return project.id === currentProjectId;
@@ -30,17 +46,50 @@ function Work() {
     );
   }
 
-  function handleModal(e, id) {
-    e.preventDefault();
-    setDisplayProjectDetailsModal(prev => !prev);
-    findCurrentNote();
+  // function handleModal(e, id) {
+  //   e.preventDefault();
+  //   setDisplayProjectDetailsModal(prev => !prev);
+  //   findCurrentNote();
+  // }
+  // console.log(currentProject)
+
+  async function edit(event, id) {
+    event.stopPropagation();
+    // ON CLICK DISPLAY THE PROJECTDETAILSMODAL TO THE INDEX OF CURRENT ID - 1
+    setCurrentProjectId(id);
+    setCurrentProject(projectPortfolioData.find(project => project.id === id));
+    // const projectDataArray = projectPortfolioData.splice // const projectDataArray = projectPortfolioData.splice(
+    //   currentProjectId,
+    //   projectPortfolioData - 1
+    // );
+    // const relevantResource = portfolioData
+    //   .filter(project => project.id === currentProjectId)
+    //   .map(project => project.resources);
+
+    handleCreateExpenseModalOpen();
   }
+
+  function handleCreateExpenseModalOpen() {
+    // if (currentProject === currentProjectId) {
+    setDisplayProjectDetailsModal(true);
+    // }
+  }
+
+  function handleCreateExpenseModalClose() {
+    setDisplayProjectDetailsModal(false);
+    setCurrentProject("");
+    setCurrentProjectId("");
+  }
+
+  console.log(currentProjectId);
 
   const portfolioArray = projectPortfolioData.map(project => (
     <ProjectCard
       key={project.id}
+      id={project.id}
       title={project.title}
       resources={project.resources}
+      description={project.description}
       src={
         !darkMode && project.displayDarkModeToggle
           ? project.src.light
@@ -52,9 +101,10 @@ function Work() {
       href={project.href}
       darkMode={darkMode}
       handleDark={handleDark}
-      handleModal={handleModal}
-
-      // currentProjectId={findCurrentNote()}
+      handleModal={edit}
+      displayProjectDetailsModal={displayProjectDetailsModal}
+      currentProjectId={currentProjectId}
+      currentProject={currentProject}
     />
   ));
   console.log(currentProjectId);

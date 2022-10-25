@@ -12,7 +12,7 @@ function Button(props) {
           props.darkMode
             ? props.handleDark
             : props.handleModal
-            ? props.handleModal
+            ? event => props.handleModal(event, props.id)
             : ""
         }
         name={props.name}
