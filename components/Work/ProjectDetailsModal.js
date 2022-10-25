@@ -9,21 +9,29 @@ function ProjectDetailsModal(props) {
   //     <ProjectResourcesCard key={resource.id} value={resource.resources} />
   //   ));
 
+  // const relevantResource = portfolioData
+  //   .filter(project => project.id === currentProjectId)
+  //   .map(project => project.resources);
+
   return (
     <div className="border-2 flex flex-col ">
+      
       <div className="w-full">
         <ProjectResourcesCard
           key={props.id}
-          value={props.resources}
+          // value={props.resources}
           currentProjectId={props.currentProjectId}
           currentProject={props.currentProject}
+          portfolioData={props.portfolioData}
         />
       </div>
       <div className="">
         <ProjectDescriptionCard
-          value={props.description}
+          // value={props.description}
+          key={props.id}
           currentProjectId={props.currentProjectId}
           currentProject={props.currentProject}
+          portfolioData={props.portfolioData}
         />
       </div>
     </div>

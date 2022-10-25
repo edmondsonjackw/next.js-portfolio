@@ -5,14 +5,17 @@ function ProjectResourcesCard(props) {
   // return <p className="">{props.value}</p>;
   // props.currentProject.splice(currentProjectId, projectPortfolioData - 1);
 
-  const resources = props.value.filter(resource => resource.length > 3);
+  // const resources = props.value.filter(resource => resource.length > 3);
 
   return (
     <p className="">
       {/* {projectPortfolioData[`${props.currentProjectId}`].resources} */}
       {/* {props.currentProject.resources} */}
       {/* {props.value} */}
-      {resources}
+      {/* {resources} */}
+      {projectPortfolioData
+        .filter(project => project.id === props.currentProjectId)
+        .map(project => project.resources)}
     </p>
   );
 }

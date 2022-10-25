@@ -79,11 +79,12 @@ function ProjectCard(props) {
           {props.displayProjectDetailsModal &&
             props.currentProjectId === props.currentProject.id && (
               <ProjectDetailsModal
-                resources={props.resources}
-                description={props.description}
+                // resources={props.resources}
+                // description={props.description}
                 handleModal={props.handleModal}
                 currentProjectId={props.currentProjectId}
                 currentProject={props.currentProject}
+                portfolioData={props.portfolioData}
               />
             )}
         </div>

@@ -2,11 +2,7 @@ export const projectPortfolioData = [
   {
     id: 1,
     title: "Expenses Tracker",
-    resources: ["HTML", "CSS", "REACTJS", "FIREBASE"],
-    // resources: {
-    //   "HTML": "html",
-    //   "CSS": "css",
-    // },
+    resources: ["0", "0", "0"],
     description: "Number 11",
     src: {
       light: "/expenses-tracker-1.svg",

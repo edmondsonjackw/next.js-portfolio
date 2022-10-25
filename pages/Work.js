@@ -57,22 +57,16 @@ function Work() {
     event.stopPropagation();
     // ON CLICK DISPLAY THE PROJECTDETAILSMODAL TO THE INDEX OF CURRENT ID - 1
     setCurrentProjectId(id);
-    setCurrentProject(projectPortfolioData.find(project => project.id === id));
+    setCurrentProject(portfolioData.find(project => project.id === id));
     // const projectDataArray = projectPortfolioData.splice // const projectDataArray = projectPortfolioData.splice(
     //   currentProjectId,
     //   projectPortfolioData - 1
     // );
-    // const relevantResource = portfolioData
-    //   .filter(project => project.id === currentProjectId)
-    //   .map(project => project.resources);
-
     handleCreateExpenseModalOpen();
   }
 
   function handleCreateExpenseModalOpen() {
-    // if (currentProject === currentProjectId) {
     setDisplayProjectDetailsModal(true);
-    // }
   }
 
   function handleCreateExpenseModalClose() {
@@ -88,8 +82,8 @@ function Work() {
       key={project.id}
       id={project.id}
       title={project.title}
-      resources={project.resources}
-      description={project.description}
+      // resources={project.resources}
+      // description={project.description}
       src={
         !darkMode && project.displayDarkModeToggle
           ? project.src.light
@@ -105,6 +99,7 @@ function Work() {
       displayProjectDetailsModal={displayProjectDetailsModal}
       currentProjectId={currentProjectId}
       currentProject={currentProject}
+      portfolioData={portfolioData}
     />
   ));
   console.log(currentProjectId);
@@ -117,6 +112,12 @@ function Work() {
         <Anchor name={"Photography"} value={"Photography"} border /> */}
       </div>
       {portfolioArray}
+      {/* <p>
+        {" "}
+        {projectPortfolioData
+          .filter(project => project.id === currentProjectId)
+          .map(project => project.resources)}
+      </p> */}
     </>
   );
 }
