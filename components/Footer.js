@@ -5,12 +5,12 @@ import linkedIn from "next/image";
 
 function Footer() {
   return (
-    <nav className="py-6 mb-10 flex justify-between border-t-2 border-b-white min-w-full ">
+    <nav className="py-6 flex justify-between border-t-2 border-primary min-w-full ">
       <div className="flex space-x-4">
-        <Anchor value="About" name="About" href="#" />
-        <Anchor value="Work" name="About" href="#" />
-        <Anchor value="Contact" name="Work" href="#" />
-        <Anchor value="CV" name="Contact" href="#" />
+        <Anchor value="About" name="About" href="#" border />
+        <Anchor value="Work" name="About" href="#" border />
+        <Anchor value="Contact" name="Work" href="#" border />
+        <Anchor value="CV" name="Contact" href="#" border />
       </div>
       <div className="flex space-x-4">
         <Anchor

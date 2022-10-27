@@ -5,15 +5,24 @@ function Button(props) {
   return (
     <>
       <button
-        className={`w-fit flex justify-between items-center space-5 bg-transparent hover:bg-gray-700 rounded-lg py-2 px-4 cursor-pointer ${
-          props.border ? "border-primary border-2" : ""
-        }`}
+        className={`w-fit flex justify-between items-center space-5 bg-transparent hover:bg-gray-700 rounded-lg py-2 px-4 cursor-pointer 
+        ${props.border ? "border-primary border-2" : ""} 
+          ${
+            (props.showWebProjects && props.name === "Web Development") ||
+            (!props.showWebProjects && props.name === "Photography")
+              ? "bg-primary text-sky-900"
+              : ""
+          }
+           ${props.photoCloseButton ? "absolute border" : ""}
+          `}
         onClick={
-          props.darkMode
-            ? props.handleDark
-            : props.handleModal
-            ? event => props.handleModal(event, props.id)
-            : ""
+          props.onClickFunction
+          // props.handleDark
+          // props.darkMode ? props.handleDark() : null
+          // ? event => props.handleModal(event, props.id)
+          // : props.handleModalClose
+          // ? props.handleModalClose
+          // : null
         }
         name={props.name}
         disabled={props.disabled}

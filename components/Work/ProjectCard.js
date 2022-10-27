@@ -7,16 +7,16 @@ import lightModeIcon from "next/image";
 import darkModeIcon from "next/image";
 import chevronLeft from "next/image";
 import chevronRight from "next/image";
-import ProjectDetailsModal from "./ProjectDetailsModal";
+import ProjectDetailsModal from "./Project Modal/ProjectDetailsModal";
 
 function ProjectCard(props) {
-  const [displayProjectDetails, setDisplayProjectDetails] = useState(false);
+  // const [displayProjectDetails, setDisplayProjectDetails] = useState(false);
 
-  function toggleDisplayProjectDetails(e) {
-    e.preventDefault();
-    setDisplayProjectDetails(!displayProjectDetails);
-  }
-
+  // function toggleDisplayProjectDetails(e) {
+  //   e.preventDefault();
+  //   setDisplayProjectDetails(!displayProjectDetails);
+  // }
+  // console.log(props.displayProjectDetailsModal);
   return (
     <div className="flex flex-col justify-between w-full ">
       <div className="m-3 flex justify-between items-center">
@@ -31,12 +31,10 @@ function ProjectCard(props) {
           target="_blank"
         />
         <h3 className="py-5">{props.title}</h3>
-
-        {/* <Image src="/project-arrow.svg" width="65" height="65" /> */}
         <Button
           name="expand"
           value="●●●"
-          handleModal={props.handleModal}
+          onClickFunction={event => props.handleModal(event, props.id)}
           id={props.id}
         />
       </div>
@@ -49,7 +47,8 @@ function ProjectCard(props) {
             src="/light-mode.svg"
             width="32"
             height="32"
-            handleDark={props.handleDark}
+            // darkMode={props.darkMode}
+            onClickFunction={props.handleDark}
           />
         ) : props.displayDarkModeToggle && props.darkMode ? (
           <Button
@@ -58,11 +57,10 @@ function ProjectCard(props) {
             src="/dark-mode.svg"
             width="32"
             height="32"
-            handleDark={props.handleDark}
+            // darkMode={props.darkMode}
+            onClickFunction={props.handleDark}
           />
-        ) : (
-          ""
-        )}
+        ) : null}
       </div>
 
       <div className="flex justify-center">
@@ -76,17 +74,19 @@ function ProjectCard(props) {
             layout="responsive"
             objectFit="contain"
           />
-          {props.displayProjectDetailsModal &&
-            props.currentProjectId === props.currentProject.id && (
-              <ProjectDetailsModal
-                // resources={props.resources}
-                // description={props.description}
-                handleModal={props.handleModal}
-                currentProjectId={props.currentProjectId}
-                currentProject={props.currentProject}
-                portfolioData={props.portfolioData}
-              />
-            )}
+          {/* {props.displayProjectDetailsModal && (
+            // props.currentProjectId === props.currentProject.id && (
+
+            <ProjectDetailsModal
+            // resources={props.resources}
+            // description={props.description}
+            // handleModalClose={props.handleModalClose}
+            // handleModal={props.handleModal}
+            // currentProjectId={props.currentProjectId}
+            // currentProject={props.currentProject}
+            // portfolioData={props.portfolioData}
+            />
+          )} */}
         </div>
         <Image src="/chevron-right.svg" width="32" height="32" />
       </div>

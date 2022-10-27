@@ -5,6 +5,7 @@ import landingImg from "next/image";
 import Work from "./Work";
 import Main from "./Main";
 import Contact from "./Contact";
+import About from "../components/About";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <main className="flex flex-col">
         <Main />
         <Work />
+        <About />
         <Contact />
       </main>
     </div>
