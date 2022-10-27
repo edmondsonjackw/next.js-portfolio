@@ -5,6 +5,7 @@ import ProjectCard from "../components/Work/ProjectCard";
 import Button from "../components/Button";
 import ProjectDetailsModal from "../components/Work/Project Modal/ProjectDetailsModal";
 import Photography from "../components/Work/Photography/Photography";
+import { photographyData } from "../components/Work/Photography/PhotographyData";
 
 function Work() {
   const [darkMode, setDarkMode] = useState(false);
@@ -12,44 +13,43 @@ function Work() {
   const [currentProjectId, setCurrentProjectId] = useState("");
   const [displayProjectDetailsModal, setDisplayProjectDetailsModal] =
     useState(false);
+  const [showPhotographyModal, setShowPhotographyModal] = useState(false);
+
   const [showWebProjects, setShowWebProjects] = useState(true);
-  // const [portfolioData, setPortfolioData] = useState(projectPortfolioData);
-  // const [projectData, setProjectData] = useState();
-  // console.log(portfolioData);
 
   function setWorkDisplayed(e) {
     e.preventDefault();
     setShowWebProjects(prev => !prev);
   }
-  console.log(showWebProjects);
 
   function handleDark(e) {
     e.preventDefault();
     setDarkMode(prev => !prev);
   }
 
-  // const projectDataArray = projectPortfolioData.splice(
-  //   //   currentProjectId,
-  //   //   projectPortfolioData - 1
-  //   // );
-
   async function handleModal(event, id) {
     event.stopPropagation();
     setCurrentProjectId(id);
-    setCurrentProject(portfolioData.find(project => project.id === id));
-    setDisplayProjectDetailsModal(true);
+    // ternary to differentiate between this or photography modals...
+    // use state on buttons between web or photog
+    if (showWebProjects) {
+      setCurrentProject(portfolioData.find(project => project.id === id));
+      setDisplayProjectDetailsModal(true);
+    } else {
+      setCurrentProject(photographyData.find(photo => photo.id === id));
+      setShowPhotographyModal(true);
+    }
   }
 
   function handleModalClose() {
-    setDisplayProjectDetailsModal(false);
+    if (showWebProjects) {
+      setDisplayProjectDetailsModal(false);
+    } else {
+      setShowPhotographyModal(false);
+    }
     setCurrentProject("");
     setCurrentProjectId("");
   }
-
-  // function toggleDisplayProjectDetails(e) {
-  //   e.preventDefault();
-  //   setDisplayProjectDetails(!displayProjectDetails);
-  // }
 
   const portfolioArray = portfolioData.map(project => (
     <ProjectCard
@@ -111,7 +111,14 @@ function Work() {
         <>{portfolioArray}</>
       ) : (
         <>
-          <Photography />
+          <Photography
+            currentProject={currentProject}
+            currentProjectId={currentProjectId}
+            handleModal={handleModal}
+            handleModalClose={handleModalClose}
+            showPhotographyModal={showPhotographyModal}
+            set
+          />
         </>
       )}
       {/* {portfolioArray} */}

@@ -12,10 +12,9 @@ function PhotographyModal(props) {
         height="32"
         width="32"
         photoCloseButton
-        onClickFunction={() => props.setShowPhotographyModal(false)}
+        onClickFunction={props.handleModalClose}
       />
       <h1>HELLO</h1>
-      
     </div>
   );
 }
