@@ -14,8 +14,9 @@ function Work() {
   const [displayProjectDetailsModal, setDisplayProjectDetailsModal] =
     useState(false);
   const [showPhotographyModal, setShowPhotographyModal] = useState(false);
-
   const [showWebProjects, setShowWebProjects] = useState(true);
+  const [pageX, setPageX] = useState("");
+  const [pageY, setPageY] = useState("");
 
   function setWorkDisplayed(e) {
     e.preventDefault();
@@ -32,6 +33,8 @@ function Work() {
     setCurrentProjectId(id);
     // ternary to differentiate between this or photography modals...
     // use state on buttons between web or photog
+    setPageX(`${event.pageX}px`);
+    setPageY(`${event.pageY}px`);
     if (showWebProjects) {
       setCurrentProject(portfolioData.find(project => project.id === id));
       setDisplayProjectDetailsModal(true);
@@ -117,7 +120,8 @@ function Work() {
             handleModal={handleModal}
             handleModalClose={handleModalClose}
             showPhotographyModal={showPhotographyModal}
-            set
+            pageX={pageX}
+            pageY={pageY}
           />
         </>
       )}

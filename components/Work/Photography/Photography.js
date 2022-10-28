@@ -15,7 +15,7 @@ function Photography(props) {
       <div
         key={photo.id}
         onClick={props.handleModal}
-        className="w-[500px] h-[500px] relative grid hover:opacity-80 cursor-pointer"
+        className="w-[500px] h-[500px] grid hover:opacity-80 cursor-pointer"
       >
         <Image
           key={photo.id}
@@ -37,14 +37,20 @@ function Photography(props) {
 
   return (
     // <div className="min-w-screen grid grid-cols-5 gap-4">
-    <div className="w-full flex flex-wrap flex justify-center items-center">
+    <div className="w-full flex flex-wrap justify-center relative">
+      <div
+        className="fixed w-screen h-full z-10 object-center "
+        // style={{ top: `${props.pageY}` }}
+      >
+        {props.showPhotographyModal && (
+          <PhotographyModal
+            handleModalClose={props.handleModalClose}
+            pageX={props.pageX}
+            pageY={props.pageY}
+          />
+        )}
+      </div>
       {photographyArray}
-
-      {props.showPhotographyModal && (
-        <div className="w-[1700px] h-[1000px] border-2 absolute">
-          <PhotographyModal handleModalClose={props.handleModalClose} />
-        </div>
-      )}
     </div>
   );
 }

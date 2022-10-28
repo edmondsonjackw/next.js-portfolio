@@ -3,8 +3,14 @@ import Button from "../../Button";
 import closeIcon from "next/image";
 
 function PhotographyModal(props) {
+  console.log(props.pageY);
+  //   top-[${props.pageY}px]
   return (
-    <div className="flex flex-col p-10">
+    <div
+      //   style={{ top: `${props.pageY}` }}
+      // className={`absolute top-[${props.pageY}] w-[750px] h-[200px] border-2 flex flex-col p-10`}
+      className={`fixed top-[${props.pageY}] w-screen h-full border-2 flex flex-col p-10`}
+    >
       <Button
         icon={closeIcon}
         name="close"
