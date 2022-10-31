@@ -7,11 +7,13 @@ import Contact from "./Contact";
 import About from "../components/About";
 import { useModalContext } from "../Context/ModalContext";
 import PhotographyModal from "../components/Work/Photography/PhotographyModal";
+import { Fragment } from "react";
 
 export default function Home() {
   const {
     showPhotographyModal,
     handleModalClose,
+    pageX,
     pageY,
     currentProject,
     currentProjectId,
@@ -23,34 +25,23 @@ export default function Home() {
         <title>Jack Edmondson Portfolio</title>
         <link rel="icon" href="/favicon.ico" />{" "}
       </Head>
-
-      {/* <main className="flex flex-col overflow-hidden"> */}
-      {/* <body
-        className={` ${showPhotographyModal ? "overflow-hidden" : ""}
-        }`}
-      > */}
-      <main className="flex flex-col">
-        {/* <div className="fixed inset-0 bg-black/30" aria-hidden="true" /> */}
-        {showPhotographyModal ? (
-          <div className="fixed inset-0 bg-black/30">
-            <PhotographyModal
-              pageY={pageY}
-              onClickFunction={handleModalClose}
-              currentProject={currentProject}
-              currentProjectId={currentProjectId}
-            />
-          </div>
-        ) : (
-          <>
-            {" "}
-            <Main />
-            <Work />
-            <About />
-            <Contact />
-          </>
-        )}
-      </main>
-      {/* </body> */}
+      <Fragment>
+   
+        <main className="flex flex-col">
+          <Main />
+          <Work />
+          <About />
+          <Contact />
+        </main>
+        <PhotographyModal
+          pageX={pageX}
+          pageY={pageY}
+          onClickFunction={handleModalClose}
+          currentProject={currentProject}
+          currentProjectId={currentProjectId}
+          showPhotographyModal={showPhotographyModal}
+        />
+      </Fragment>
     </div>
   );
 }

@@ -27,12 +27,12 @@ export default function ModalProvider({ children }) {
   }
   console.log(pageY);
 
-  function handleModal(event, id) {
+  async function handleModal(event, id) {
     event.stopPropagation();
     setCurrentProjectId(id);
     // ternary to differentiate between this or photography modals...
     // use state on buttons between web or photog
-    setPageX(`${event.pageX}px`);
+    setPageX(`${event.pageX}`);
     setPageY(`${event.pageY}px`);
     if (showWebProjects) {
       setCurrentProject(portfolioData.find(project => project.id === id));
