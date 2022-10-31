@@ -24,7 +24,7 @@ body {
     #ad5d5d 360deg
   ); */
   /* background: rgb(161, 161, 161); */
-  backdrop-filter: blur(26px);
+  /* backdrop-filter: blur(26px); */
   background: linear-gradient(
     180deg,
     #181717 0%,

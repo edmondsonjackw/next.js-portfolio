@@ -11,19 +11,42 @@ function PhotographyModal(props) {
   if (!props.showPhotographyModal) return null;
   const topPageY = props.pageY;
 
-  const myStyle = {
-    top: props.pageY,
+  const modalStyle = {
+    display: "block",
+    position: "fixed",
+    zIndex: "1",
+    paddingTop: "100px",
+    left: "0",
+    top: "0",
+    width: "100%",
+    height: "100%",
+    overflow: "auto",
+    backgroundColor: "rgb(0,0,0)",
+    backgroundColor: "rgba(0,0,0,0.9)",
+  };
+
+  const modal2Style = {
+    backgroundColor: "#fefefe",
+    margin: "auto",
+    padding: "20px",
+    border: "1px solid #888",
+    width: "80%",
+    // position: "fixed",
+    // top: topPageY,
   };
 
   return (
     <div
-      style={myStyle}
-      className={`fixed overflow-hidden inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center `}
+      className={`fixed block z-10 pt-64 top-0 left-0 w-full h-full overflow: "auto", bg-black bg-opacity-25 backdrop-blur-sm`}
       onClick={props.handleModalClose}
+      id="modal"
     >
+      
+
       <div
-        style={myStyle}
-        className={`w-3/6 h-screen border-2 absolute flex flex-col `}
+        // style={modal2Style}
+        className={`w-5/6 m-auto border-2 p-5`}
+        id="modal-content"
       >
         <Button
           icon={closeIcon}
@@ -34,13 +57,12 @@ function PhotographyModal(props) {
           photoCloseButton
           onClickFunction={props.onClickFunction}
         />
-        <h1>HELLO</h1>
-        <div className="">
+        <div className="flex justify-center items-center">
           <Image
             src={props.currentProject.src}
-            width="100%"
-            height="100%"
-            objectFit="cover"
+            width="600px"
+            height="600px"
+            objectFit="contain"
           />
         </div>
       </div>

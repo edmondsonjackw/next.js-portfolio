@@ -7,7 +7,6 @@ import Contact from "./Contact";
 import About from "../components/About";
 import { useModalContext } from "../Context/ModalContext";
 import PhotographyModal from "../components/Work/Photography/PhotographyModal";
-import { Fragment } from "react";
 
 export default function Home() {
   const {
@@ -18,21 +17,23 @@ export default function Home() {
     currentProject,
     currentProjectId,
   } = useModalContext();
-
+  console.log(pageX);
   return (
-    <div>
+    <>
       <Head>
         <title>Jack Edmondson Portfolio</title>
-        <link rel="icon" href="/favicon.ico" />{" "}
+        <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        ></meta>{" "}
       </Head>
-      <Fragment>
-   
-        <main className="flex flex-col">
-          <Main />
-          <Work />
-          <About />
-          <Contact />
-        </main>
+      <main className="flex flex-col mx-8">
+        <Main />
+        <Work />
+        <About />
+        <Contact />
+
         <PhotographyModal
           pageX={pageX}
           pageY={pageY}
@@ -41,7 +42,7 @@ export default function Home() {
           currentProjectId={currentProjectId}
           showPhotographyModal={showPhotographyModal}
         />
-      </Fragment>
-    </div>
+      </main>
+    </>
   );
 }
