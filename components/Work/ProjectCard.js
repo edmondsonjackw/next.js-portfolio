@@ -8,15 +8,16 @@ import darkModeIcon from "next/image";
 import chevronLeft from "next/image";
 import chevronRight from "next/image";
 import ProjectDetailsModal from "./Project Modal/ProjectDetailsModal";
+import { useModalContext } from "../../Context/ModalContext";
 
 function ProjectCard(props) {
+  const { handleModal } = useModalContext();
   // const [displayProjectDetails, setDisplayProjectDetails] = useState(false);
 
   // function toggleDisplayProjectDetails(e) {
   //   e.preventDefault();
   //   setDisplayProjectDetails(!displayProjectDetails);
   // }
-  // console.log(props.displayProjectDetailsModal);
   return (
     <div className="flex flex-col justify-between w-full ">
       <div className="m-3 flex justify-between items-center">
@@ -34,7 +35,7 @@ function ProjectCard(props) {
         <Button
           name="expand"
           value="●●●"
-          onClickFunction={event => props.handleModal(event, props.id)}
+          onClickFunction={event => handleModal(event, props.id)}
           id={props.id}
         />
       </div>

@@ -6,53 +6,64 @@ import Button from "../components/Button";
 import ProjectDetailsModal from "../components/Work/Project Modal/ProjectDetailsModal";
 import Photography from "../components/Work/Photography/Photography";
 import { photographyData } from "../components/Work/Photography/PhotographyData";
+import { useModalContext } from "../Context/ModalContext";
 
 function Work() {
-  const [darkMode, setDarkMode] = useState(false);
-  const [currentProject, setCurrentProject] = useState("");
-  const [currentProjectId, setCurrentProjectId] = useState("");
-  const [displayProjectDetailsModal, setDisplayProjectDetailsModal] =
-    useState(false);
-  const [showPhotographyModal, setShowPhotographyModal] = useState(false);
-  const [showWebProjects, setShowWebProjects] = useState(true);
-  const [pageX, setPageX] = useState("");
-  const [pageY, setPageY] = useState("");
+  const {
+    displayProjectDetailsModal,
+    showPhotographyModal,
+    handleModal,
+    handleModalClose,
+    currentProject,
+    setCurrentProject,
+    currentProjectId,
+    setCurrentProjectId,
+    showWebProjects,
+    setShowWebProjects,
+    setWorkDisplayed,
+  } = useModalContext();
+  // -----------------------------------------------------
 
-  function setWorkDisplayed(e) {
-    e.preventDefault();
-    setShowWebProjects(prev => !prev);
-  }
+  const [darkMode, setDarkMode] = useState(false);
+  // const [currentProject, setCurrentProject] = useState("");
+  // const [currentProjectId, setCurrentProjectId] = useState("");
+  // const [displayProjectDetailsModal, setDisplayProjectDetailsModal] =
+  //   useState(false);
+  // const [showPhotographyModal, setShowPhotographyModal] = useState(false);
+  // const [showWebProjects, setShowWebProjects] = useState(true);
+  // const [pageX, setPageX] = useState("");
+  // const [pageY, setPageY] = useState("");
 
   function handleDark(e) {
     e.preventDefault();
     setDarkMode(prev => !prev);
   }
 
-  async function handleModal(event, id) {
-    event.stopPropagation();
-    setCurrentProjectId(id);
-    // ternary to differentiate between this or photography modals...
-    // use state on buttons between web or photog
-    setPageX(`${event.pageX}px`);
-    setPageY(`${event.pageY}px`);
-    if (showWebProjects) {
-      setCurrentProject(portfolioData.find(project => project.id === id));
-      setDisplayProjectDetailsModal(true);
-    } else {
-      setCurrentProject(photographyData.find(photo => photo.id === id));
-      setShowPhotographyModal(true);
-    }
-  }
+  // async function handleModal(event, id) {
+  //   event.stopPropagation();
+  //   setCurrentProjectId(id);
+  //   // ternary to differentiate between this or photography modals...
+  //   // use state on buttons between web or photog
+  //   setPageX(`${event.pageX}px`);
+  //   setPageY(`${event.pageY}px`);
+  //   if (showWebProjects) {
+  //     setCurrentProject(portfolioData.find(project => project.id === id));
+  //     setDisplayProjectDetailsModal(true);
+  //   } else {
+  //     setCurrentProject(photographyData.find(photo => photo.id === id));
+  //     setShowPhotographyModal(true);
+  //   }
+  // }
 
-  function handleModalClose() {
-    if (showWebProjects) {
-      setDisplayProjectDetailsModal(false);
-    } else {
-      setShowPhotographyModal(false);
-    }
-    setCurrentProject("");
-    setCurrentProjectId("");
-  }
+  // function handleModalClose() {
+  //   if (showWebProjects) {
+  //     setDisplayProjectDetailsModal(false);
+  //   } else {
+  //     setShowPhotographyModal(false);
+  //   }
+  //   setCurrentProject("");
+  //   setCurrentProjectId("");
+  // }
 
   const portfolioArray = portfolioData.map(project => (
     <ProjectCard
@@ -73,7 +84,6 @@ function Work() {
       handleModal={handleModal}
     />
   ));
-  console.log(currentProject);
   return (
     <>
       <div className="flex justify-center space-x-4 my-10 ">
@@ -120,8 +130,8 @@ function Work() {
             handleModal={handleModal}
             handleModalClose={handleModalClose}
             showPhotographyModal={showPhotographyModal}
-            pageX={pageX}
-            pageY={pageY}
+            // pageX={pageX}
+            // pageY={pageY}
           />
         </>
       )}

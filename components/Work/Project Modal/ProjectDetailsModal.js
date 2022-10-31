@@ -1,22 +1,24 @@
 import React from "react";
 import Anchor from "../../Anchor";
-import { projectPortfolioData } from "../portfolioData";
 import closeIcon from "next/image";
 import Button from "../../Button";
+import { useModalContext } from "../../../Context/ModalContext";
 
 function ProjectDetailsModal(props) {
+  const { handleModalClose } = useModalContext();
   return (
     <div className="w-auto border-2 border-primary rounded-lg py-4 px-6 flex flex-col ">
-      <div className="flex justify-end">
+      <div className="flex ">
         <Button
           icon={closeIcon}
           name="close"
           src="/close-icon.svg"
           height="32"
           width="32"
-          onClickFunction={props.handleModalClose}
+          onClickFunction={handleModalClose}
           // handleCloseModal={props.handleCloseModal}
         />
+
       </div>
       <div className="space-y-10">
         <div className="w-fit">

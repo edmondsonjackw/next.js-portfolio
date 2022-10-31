@@ -13,17 +13,9 @@ function Button(props) {
               ? "bg-primary text-sky-900"
               : ""
           }
-           ${props.photoCloseButton ? "absolute border" : ""}
+       
           `}
-        onClick={
-          props.onClickFunction
-          // props.handleDark
-          // props.darkMode ? props.handleDark() : null
-          // ? event => props.handleModal(event, props.id)
-          // : props.handleModalClose
-          // ? props.handleModalClose
-          // : null
-        }
+        onClick={props.onClickFunction}
         name={props.name}
         disabled={props.disabled}
       >
