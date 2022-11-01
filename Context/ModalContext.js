@@ -14,8 +14,7 @@ export default function ModalProvider({ children }) {
   const [showPhotographyModal, setShowPhotographyModal] = useState(false);
   const [currentProject, setCurrentProject] = useState("");
   const [currentProjectId, setCurrentProjectId] = useState("");
-  const [pageX, setPageX] = useState("");
-  const [pageY, setPageY] = useState("");
+
   const [showWebProjects, setShowWebProjects] = useState(true);
 
   function setWorkDisplayed(event) {
@@ -25,15 +24,13 @@ export default function ModalProvider({ children }) {
     setCurrentProject("");
     setCurrentProjectId("");
   }
-  console.log(pageY);
 
   async function handleModal(event, id) {
     event.stopPropagation();
     setCurrentProjectId(id);
     // ternary to differentiate between this or photography modals...
     // use state on buttons between web or photog
-    setPageX(`${event.pageX}`);
-    setPageY(`${event.pageY}px`);
+
     if (showWebProjects) {
       setCurrentProject(portfolioData.find(project => project.id === id));
       setDisplayProjectDetailsModal(true);
@@ -70,8 +67,7 @@ export default function ModalProvider({ children }) {
     setCurrentProject,
     currentProjectId,
     setCurrentProjectId,
-    pageX,
-    pageY,
+
     closePhotogModal,
   };
   return (
