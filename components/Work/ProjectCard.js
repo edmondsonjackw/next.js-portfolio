@@ -11,71 +11,72 @@ import ProjectDetailsModal from "./Project Modal/ProjectDetailsModal";
 import { useModalContext } from "../../Context/ModalContext";
 
 function ProjectCard(props) {
-  const { handleModal } = useModalContext();
-  // const [displayProjectDetails, setDisplayProjectDetails] = useState(false);
+	const { handleModal } = useModalContext();
+	// const [displayProjectDetails, setDisplayProjectDetails] = useState(false);
 
-  // function toggleDisplayProjectDetails(e) {
-  //   e.preventDefault();
-  //   setDisplayProjectDetails(!displayProjectDetails);
-  // }
-  return (
-    <div className="flex flex-col justify-between w-full ">
-      <div className="m-3 flex justify-between items-center">
-        <Anchor
-          value=""
-          icon={arrow}
-          href={props.href}
-          name="projectLink"
-          src="/project-arrow.svg"
-          width="24"
-          height="24"
-          target="_blank"
-        />
-        <h3 className="py-5">{props.title}</h3>
-        <Button
-          name="expand"
-          value="●●●"
-          onClickFunction={event => handleModal(event, props.id)}
-          id={props.id}
-        />
-      </div>
+	// function toggleDisplayProjectDetails(e) {
+	//   e.preventDefault();
+	//   setDisplayProjectDetails(!displayProjectDetails);
+	// }
 
-      <div className="w-full flex justify-center mb-5">
-        {props.displayDarkModeToggle && !props.darkMode ? (
-          <Button
-            icon={lightModeIcon}
-            name="toggleDark"
-            src="/light-mode.svg"
-            width="32"
-            height="32"
-            // darkMode={props.darkMode}
-            onClickFunction={props.handleDark}
-          />
-        ) : props.displayDarkModeToggle && props.darkMode ? (
-          <Button
-            icon={darkModeIcon}
-            name="toggleDark"
-            src="/dark-mode.svg"
-            width="32"
-            height="32"
-            // darkMode={props.darkMode}
-            onClickFunction={props.handleDark}
-          />
-        ) : null}
-      </div>
+	return (
+		<div className="flex flex-col justify-between w-full ">
+			<div className="mx-3 pt-24 flex justify-between items-center">
+				<Anchor
+					value=""
+					icon={arrow}
+					href={props.href}
+					name="projectLink"
+					src="/project-arrow.svg"
+					width="24"
+					height="24"
+					target="_blank"
+				/>
+				<h3 className="">{props.title}</h3>
+				<Button
+					name="expand"
+					value="●●●"
+					onClickFunction={(event) => handleModal(event, props.id)}
+					id={props.id}
+				/>
+			</div>
 
-      <div className="flex justify-center">
-        <Image src="/chevron-left.svg" width="32" height="32" />
-        <div className="w-full">
-          <Image
-            src={props.src}
-            alt=""
-            width="100%"
-            height="50%"
-            layout="responsive"
-            objectFit="contain"
-          />
-          {/* {props.displayProjectDetailsModal && (
+			<div className="w-full flex justify-center mb-5">
+				{props.displayDarkModeToggle && !props.darkMode ? (
+					<Button
+						icon={lightModeIcon}
+						name="toggleDark"
+						src="/light-mode.svg"
+						width="32"
+						height="32"
+						// darkMode={props.darkMode}
+						onClickFunction={props.handleDark}
+					/>
+				) : props.displayDarkModeToggle && props.darkMode ? (
+					<Button
+						icon={darkModeIcon}
+						name="toggleDark"
+						src="/dark-mode.svg"
+						width="32"
+						height="32"
+						// darkMode={props.darkMode}
+						onClickFunction={props.handleDark}
+					/>
+				) : null}
+			</div>
+
+			<div className="flex justify-center">
+				<Image src="/chevron-left.svg" width="32" height="32" />
+				<div className="w-full">
+					<Image
+						src={props.src}
+						alt=""
+						width="100%"
+						height="50%"
+						layout="responsive"
+						objectFit="contain"
+					/>
+					{/* {props.displayProjectDetailsModal && (
             // props.currentProjectId === props.currentProject.id && (
 
             <ProjectDetailsModal
@@ -88,11 +89,11 @@ function ProjectCard(props) {
             // portfolioData={props.portfolioData}
             />
           )} */}
-        </div>
-        <Image src="/chevron-right.svg" width="32" height="32" />
-      </div>
-    </div>
-  );
+				</div>
+				<Image src="/chevron-right.svg" width="32" height="32" />
+			</div>
+		</div>
+	);
 }
 
 export default ProjectCard;
