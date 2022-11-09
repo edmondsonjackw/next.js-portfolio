@@ -21,7 +21,7 @@ function Photography(props) {
 		<div
 			key={photo.id}
 			id={photo.id}
-			className="w-[500px] h-[500px]  grid hover:opacity-70 cursor-pointer"
+			className="w-[350px] h-[350px]  grid hover:opacity-70 cursor-pointer"
 			onClick={(event) => handleModal(event, photo.id)}>
 			<Image
 				key={photo.id}

@@ -5,7 +5,7 @@ function Button(props) {
 	return (
 		<>
 			<button
-				className={`w-fit flex justify-between items-center gap-2 bg-transparent hover:bg-gray-700 rounded-lg py-2 px-4 cursor-pointer 
+				className={`w-fit h-fit flex justify-between items-center gap-2 bg-transparent hover:bg-gray-700 rounded-lg py-2 px-4 cursor-pointer 
         ${props.border ? "border-primary border-2" : ""} 
           ${
 						(props.showWebProjects && props.name === "Web Development") ||

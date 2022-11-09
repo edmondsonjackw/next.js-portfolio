@@ -30,7 +30,7 @@ export default function Home() {
 					name="viewport"
 					content="width=device-width, initial-scale=1"></meta>{" "}
 			</Head>
-			<main className="flex flex-col mx-14 space-y-16 ">
+			<main className="flex flex-col mx-14">
 				<Main />
 				<Work />
 				<About />
