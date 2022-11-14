@@ -20,7 +20,7 @@ export default function ModalProvider({ children }) {
 
 	useEffect(() => {
 		setPortfolioDataArray(portfolioData);
-	}, [portfolioDataArray]);
+	});
 
 	function setWorkDisplayed(event) {
 		event.preventDefault();
@@ -88,49 +88,20 @@ export default function ModalProvider({ children }) {
 		event.stopPropagation();
 		// setCurrentProjectId(id);
 		setCurrentProject(portfolioData.find((project) => project.id === id));
-		// setCurrentIndex(currentIndex + 1);
 		setCurrentIndex(
 			portfolioDataArray.findIndex((project) => {
 				return project.id === id;
 			})
 		);
 		function sortData() {
-			// 	// currentProject.src.push(currentProject.src[0]);
-			// 	// currentProject.src.shift();
-			// 	portfolioDataArray[currentIndex].src.push(currentProject.src[0]);
-			// 	portfolioDataArray[currentIndex].src.shift();
-			// }
-
-			setPortfolioDataArray((prev) => {
-				portfolioDataArray: [
-					...prev,
-					portfolioDataArray[currentIndex].src.push(currentProject.src[0]),
-				];
-			});
+			portfolioDataArray[currentIndex].src.push(currentProject.src[0]);
+			portfolioDataArray[currentIndex].src.shift();
 		}
 		sortData();
 		console.log(portfolioDataArray[currentIndex].src);
-
-		// IF CURRENT ID !== NEW ID THEN SET CURRENT ID TO 0
-
-		// currentProject.src.push(currentProject.src[0]);
-		// currentProject.src.shift();
-		// portfolioDataArray[currentIndex].src.push(currentProject.src[0]);
-		// const currentProjectArray = portfolioDataArray[currentIndex];
-		// portfolioDataArray[currentIndex].src.shift();
-		// console.log(currentIndex);
 		console.log(currentIndex);
-		// currentProjectArray.src.push("hi");
-		// portfolioDataArray[currentIndex].src.push(
-		// 	portfolioDataArray[currentIndex].src[0]
-		// );
-		// portfolioDataArray[currentIndex].src.shift();
-		// console.log(currentProjectArray);
 	}
-	// FIND WAY TO NOT CHANGE CURRENT INDEX AFTER FIRST CLICK
-	// currentproject.push first in array then shift it
-	// console.log(currentProject);
-	// console.log(currentIndex);
+
 	console.log(portfolioDataArray);
 
 	const value = {
