@@ -20,7 +20,7 @@ export default function ModalProvider({ children }) {
 
 	useEffect(() => {
 		setPortfolioDataArray(portfolioData);
-	});
+	}, []);
 
 	function setWorkDisplayed(event) {
 		event.preventDefault();
@@ -87,12 +87,13 @@ export default function ModalProvider({ children }) {
 	function goForwardWeb(event, id) {
 		event.stopPropagation();
 		// setCurrentProjectId(id);
-		setCurrentProject(portfolioData.find((project) => project.id === id));
+		setCurrentProject(portfolioDataArray.find((project) => project.id === id));
 		setCurrentIndex(
 			portfolioDataArray.findIndex((project) => {
 				return project.id === id;
 			})
 		);
+
 		function sortData() {
 			portfolioDataArray[currentIndex].src.push(currentProject.src[0]);
 			portfolioDataArray[currentIndex].src.shift();

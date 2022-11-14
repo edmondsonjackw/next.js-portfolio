@@ -83,6 +83,7 @@ function ProjectCard(props) {
 					src="/chevron-left.svg"
 					width="32"
 					height="32"
+					id={props.id}
 				/>
 				<div className="w-full">
 					<Image
@@ -100,6 +101,7 @@ function ProjectCard(props) {
 					src="/chevron-right.svg"
 					width="32"
 					height="32"
+					id={props.id}
 				/>
 			</div>
 		</div>
