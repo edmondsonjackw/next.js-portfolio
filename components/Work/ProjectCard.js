@@ -3,6 +3,7 @@ import Image from "next/image";
 import Button from "../Button";
 import Anchor from "../Anchor";
 import arrow from "next/image";
+import expand from "next/image";
 import lightModeIcon from "next/image";
 import darkModeIcon from "next/image";
 import chevronLeft from "next/image";
@@ -11,7 +12,13 @@ import ProjectDetailsModal from "./Project Modal/ProjectDetailsModal";
 import { useModalContext } from "../../Context/ModalContext";
 
 function ProjectCard(props) {
-	const { handleModal } = useModalContext();
+	const {
+		currentIndex,
+		handleModal,
+		goForwardPicture,
+		goBackPicture,
+		goForwardWeb,
+	} = useModalContext();
 	// const [displayProjectDetails, setDisplayProjectDetails] = useState(false);
 
 	// function toggleDisplayProjectDetails(e) {
@@ -21,9 +28,8 @@ function ProjectCard(props) {
 
 	return (
 		<div className="flex flex-col justify-between w-full ">
-			<div className="mx-3 pt-24 flex justify-between items-center">
+			<div className="w-full pt-24 flex justify-between items-center">
 				<Anchor
-					value=""
 					icon={arrow}
 					href={props.href}
 					name="projectLink"
@@ -31,13 +37,18 @@ function ProjectCard(props) {
 					width="24"
 					height="24"
 					target="_blank"
+					pCard
 				/>
 				<h3 className="">{props.title}</h3>
 				<Button
+					icon={expand}
 					name="expand"
-					value="●●●"
+					src="/expand.svg"
+					width="24"
+					height="24"
 					onClickFunction={(event) => handleModal(event, props.id)}
 					id={props.id}
+					pCard
 				/>
 			</div>
 
@@ -66,7 +77,13 @@ function ProjectCard(props) {
 			</div>
 
 			<div className="flex justify-center">
-				<Image src="/chevron-left.svg" width="32" height="32" />
+				<Button
+					onClickFunction={goForwardWeb}
+					icon={chevronLeft}
+					src="/chevron-left.svg"
+					width="32"
+					height="32"
+				/>
 				<div className="w-full">
 					<Image
 						src={props.src}
@@ -76,21 +93,14 @@ function ProjectCard(props) {
 						layout="responsive"
 						objectFit="contain"
 					/>
-					{/* {props.displayProjectDetailsModal && (
-            // props.currentProjectId === props.currentProject.id && (
-
-            <ProjectDetailsModal
-            // resources={props.resources}
-            // description={props.description}
-            // handleModalClose={props.handleModalClose}
-            // handleModal={props.handleModal}
-            // currentProjectId={props.currentProjectId}
-            // currentProject={props.currentProject}
-            // portfolioData={props.portfolioData}
-            />
-          )} */}
 				</div>
-				<Image src="/chevron-right.svg" width="32" height="32" />
+				<Button
+					onClickFunction={(event) => goForwardWeb(event, props.id)}
+					icon={chevronRight}
+					src="/chevron-right.svg"
+					width="32"
+					height="32"
+				/>
 			</div>
 		</div>
 	);

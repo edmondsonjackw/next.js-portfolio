@@ -5,8 +5,9 @@ function Button(props) {
 	return (
 		<>
 			<button
-				className={`w-fit h-fit flex justify-between items-center gap-2 bg-transparent hover:bg-gray-700 rounded-lg py-2 px-4 cursor-pointer 
+				className={`w-fit h-fit flex justify-between items-center gap-2 bg-transparent hover:bg-gray-700 rounded-lg text-xs sm:text-base cursor-pointer 
         ${props.border ? "border-primary border-2" : ""} 
+		${!props.pCard ? "py-2 px-3 sm:px-4" : ""}
           ${
 						(props.showWebProjects && props.name === "Web Development") ||
 						(!props.showWebProjects && props.name === "Photography")

@@ -47,7 +47,7 @@ function PhotographyModal(props) {
 					height="32"
 				/>
 
-				<div className="relative w-full h-full">
+				<div className="relative w-full h-full m-4 ">
 					<Image
 						src={props.currentProject.src}
 						// width={

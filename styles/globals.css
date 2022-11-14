@@ -64,22 +64,62 @@ textarea:focus-visible {
 }
 
 @media only screen and (max-width: 1280px) {
-	@layer base {
-		h1 {
-			@apply text-7xl;
-			@apply font-bold;
-		}
-		h2 {
-			@apply text-7xl;
-			@apply font-semibold;
-		}
-		h3 {
-			@apply text-7xl;
-		}
-		p {
-			@apply text-2xl;
-			/* @apply italic; */
-		}
+	h1 {
+		@apply text-8xl;
+	}
+	h2 {
+		@apply text-6xl;
+	}
+	h3 {
+		@apply text-6xl;
+	}
+	p {
+		@apply text-xl;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	h1 {
+		@apply text-7xl;
+	}
+	h2 {
+		@apply text-5xl;
+	}
+	h3 {
+		@apply text-5xl;
+	}
+	p {
+		@apply text-lg;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	h1 {
+		@apply text-6xl;
+	}
+	h2 {
+		@apply text-4xl;
+	}
+	h3 {
+		@apply text-4xl;
+	}
+	p {
+		@apply text-sm;
+	}
+}
+
+@media only screen and (max-width: 640px) {
+	h1 {
+		@apply text-4xl;
+	}
+	h2 {
+		@apply text-2xl;
+	}
+	h3 {
+		@apply text-2xl;
+	}
+	p {
+		@apply text-xs;
 	}
 }
 

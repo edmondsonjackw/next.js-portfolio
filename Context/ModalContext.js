@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { portfolioData } from "../components/Work/portfolioData.js";
 import { photographyData } from "../components/Work/Photography/PhotographyData";
 
@@ -12,10 +12,15 @@ export default function ModalProvider({ children }) {
 	const [displayProjectDetailsModal, setDisplayProjectDetailsModal] =
 		useState(false);
 	const [showPhotographyModal, setShowPhotographyModal] = useState(false);
+	const [portfolioDataArray, setPortfolioDataArray] = useState([]);
 	const [currentProject, setCurrentProject] = useState("");
 	const [currentProjectId, setCurrentProjectId] = useState(0);
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [showWebProjects, setShowWebProjects] = useState(true);
+
+	useEffect(() => {
+		setPortfolioDataArray(portfolioData);
+	}, [portfolioDataArray]);
 
 	function setWorkDisplayed(event) {
 		event.preventDefault();
@@ -47,7 +52,6 @@ export default function ModalProvider({ children }) {
 			setShowPhotographyModal(true);
 		}
 	}
-	// console.log(currentProjectId);
 
 	function handleModalClose() {
 		if (showWebProjects) {
@@ -80,6 +84,55 @@ export default function ModalProvider({ children }) {
 		}
 	}
 
+	function goForwardWeb(event, id) {
+		event.stopPropagation();
+		// setCurrentProjectId(id);
+		setCurrentProject(portfolioData.find((project) => project.id === id));
+		// setCurrentIndex(currentIndex + 1);
+		setCurrentIndex(
+			portfolioDataArray.findIndex((project) => {
+				return project.id === id;
+			})
+		);
+		function sortData() {
+			// 	// currentProject.src.push(currentProject.src[0]);
+			// 	// currentProject.src.shift();
+			// 	portfolioDataArray[currentIndex].src.push(currentProject.src[0]);
+			// 	portfolioDataArray[currentIndex].src.shift();
+			// }
+
+			setPortfolioDataArray((prev) => {
+				portfolioDataArray: [
+					...prev,
+					portfolioDataArray[currentIndex].src.push(currentProject.src[0]),
+				];
+			});
+		}
+		sortData();
+		console.log(portfolioDataArray[currentIndex].src);
+
+		// IF CURRENT ID !== NEW ID THEN SET CURRENT ID TO 0
+
+		// currentProject.src.push(currentProject.src[0]);
+		// currentProject.src.shift();
+		// portfolioDataArray[currentIndex].src.push(currentProject.src[0]);
+		// const currentProjectArray = portfolioDataArray[currentIndex];
+		// portfolioDataArray[currentIndex].src.shift();
+		// console.log(currentIndex);
+		console.log(currentIndex);
+		// currentProjectArray.src.push("hi");
+		// portfolioDataArray[currentIndex].src.push(
+		// 	portfolioDataArray[currentIndex].src[0]
+		// );
+		// portfolioDataArray[currentIndex].src.shift();
+		// console.log(currentProjectArray);
+	}
+	// FIND WAY TO NOT CHANGE CURRENT INDEX AFTER FIRST CLICK
+	// currentproject.push first in array then shift it
+	// console.log(currentProject);
+	// console.log(currentIndex);
+	console.log(portfolioDataArray);
+
 	const value = {
 		displayProjectDetailsModal,
 		showPhotographyModal,
@@ -97,6 +150,8 @@ export default function ModalProvider({ children }) {
 		// closePhotogModal,
 		goForwardPicture,
 		goBackPicture,
+		goForwardWeb,
+		portfolioDataArray,
 	};
 	return (
 		<ModalContext.Provider value={value}>{children}</ModalContext.Provider>

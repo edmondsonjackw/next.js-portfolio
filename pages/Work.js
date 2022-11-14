@@ -21,6 +21,7 @@ function Work() {
 		showWebProjects,
 		setShowWebProjects,
 		setWorkDisplayed,
+		portfolioDataArray,
 	} = useModalContext();
 	// -----------------------------------------------------
 
@@ -65,7 +66,7 @@ function Work() {
 	//   setCurrentProjectId("");
 	// }
 
-	const portfolioArray = portfolioData.map((project) => (
+	const portfolioArray = portfolioDataArray.map((project) => (
 		<ProjectCard
 			key={project.id}
 			id={project.id}
@@ -75,7 +76,7 @@ function Work() {
 					? project.src.light
 					: darkMode && project.displayDarkModeToggle
 					? project.src.dark
-					: project.src
+					: project.src[0]
 			}
 			href={project.href}
 			displayDarkModeToggle={project.displayDarkModeToggle}

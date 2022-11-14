@@ -18,7 +18,12 @@ export const portfolioData = [
 		resources: ["HTML", "CSS", "ReactJS", "Firebase"],
 		description:
 			"The text-to-markdown notes app was built using React, utilising react-mde, helping simplify the curation of markdown text passages.\n\nUser authentication and database storage was integrated using Firebase, allowing users to access the app on different devices.\nUpon creating a note, users can see creation date and update individual note titles which will dynamically change the routing.\nValidation was added to the contact form using Regex, displaying messages if any fields require changes.",
-		src: "/expenses-tracker-2.png",
+		src: [
+			"/expenses-tracker-2.png",
+			"/expenses-tracker-3.png",
+			"/expenses-tracker-4.png",
+		],
+
 		darkMode: "",
 		href: "https://t2t-notes-app.netlify.app",
 	},
@@ -28,7 +33,12 @@ export const portfolioData = [
 		resources: ["HTML", "CSS", "ReactJS"],
 		description:
 			"A simple, yet entertaining meme generator app, allowing users to overlay text onto some of the most popular meme images.\n\nThis app utilises data from an API and displays a random image within the array.",
-		src: "/expenses-tracker-3.png",
+		src: [
+			"/expenses-tracker-2.png",
+			"/expenses-tracker-3.png",
+			"/expenses-tracker-4.png",
+		],
+
 		darkMode: "",
 		href: "",
 	},
@@ -37,9 +47,12 @@ export const portfolioData = [
 		title: "Tenzies Game",
 		resources: ["HTML", "CSS", "ReactJS"],
 		description:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-		src: "/expenses-tracker-4.png",
-		description: "Number 44",
+			"Tenzies is a game whereby the player must roll dice and select a number to proceed with, placing those dice to one side. To win, the player must roll the remaining dice until all numbers are the same in the quickest amount of time.\n\nA roll counter and timer were added into the app to allow players to record high scores, which are stored within the browser.",
+		src: [
+			"/expenses-tracker-2.png",
+			"/expenses-tracker-3.png",
+			"/expenses-tracker-4.png",
+		],
 		href: "",
 	},
 	{
@@ -48,7 +61,12 @@ export const portfolioData = [
 		resources: ["HTML", "CSS", "ReactJS"],
 		description:
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-		src: "/expenses-tracker-4.png",
+		src: [
+			"/expenses-tracker-2.png",
+			"/expenses-tracker-3.png",
+			"/expenses-tracker-4.png",
+		],
+
 		description: "",
 		href: "",
 	},

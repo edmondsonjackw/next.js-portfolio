@@ -9,8 +9,8 @@ function Contact() {
 	return (
 		<div className="flex flex-col items-center min-h-screen">
 			<div className="flex flex-col justify-between items-center m-auto gap-4">
-				<p>Reach out. </p>
-				<div className="flex gap-4">
+				<h3 className="italic">Reach out. </h3>
+				<div className="flex gap-4 mt-4">
 					<Anchor
 						value=""
 						href="mailto:edmondson.jackw@gmail.com"
