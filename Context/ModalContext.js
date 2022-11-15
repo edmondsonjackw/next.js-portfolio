@@ -20,7 +20,7 @@ export default function ModalProvider({ children }) {
 
 	useEffect(() => {
 		setPortfolioDataArray(portfolioData);
-	}, [portfolioDataArray]);
+	}, []);
 
 	function setWorkDisplayed(event) {
 		event.preventDefault();

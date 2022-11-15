@@ -78,7 +78,7 @@ function ProjectCard(props) {
 				) : null}
 			</div>
 
-			<div className="flex justify-center">
+			<div className="flex justify-center items-center">
 				<Button
 					onClickFunction={goForwardWeb}
 					icon={chevronLeft}

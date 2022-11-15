@@ -1,4 +1,5 @@
 export const portfolioData = [
+	// ADD IN USER LOGIN FOR RECRUITERS
 	{
 		id: 1,
 		title: "Expenses Tracker",
@@ -40,7 +41,7 @@ export const portfolioData = [
 		],
 
 		darkMode: "",
-		href: "",
+		href: "https://je-tenzies.netlify.app/",
 	},
 	{
 		id: 4,
@@ -53,7 +54,7 @@ export const portfolioData = [
 			"/expenses-tracker-3.png",
 			"/expenses-tracker-4.png",
 		],
-		href: "",
+		href: "https://je-meme-generator.netlify.app/",
 	},
 	{
 		id: 5,
