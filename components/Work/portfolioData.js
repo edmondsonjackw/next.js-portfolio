@@ -23,6 +23,7 @@ export const portfolioData = [
 			"/expenses-tracker-3.png",
 			"/expenses-tracker-4.png",
 		],
+
 		darkMode: "",
 		href: "https://t2t-notes-app.netlify.app",
 	},

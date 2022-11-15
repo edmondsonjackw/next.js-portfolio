@@ -20,7 +20,7 @@ export default function ModalProvider({ children }) {
 
 	useEffect(() => {
 		setPortfolioDataArray(portfolioData);
-	}, []);
+	}, [portfolioDataArray]);
 
 	function setWorkDisplayed(event) {
 		event.preventDefault();
@@ -37,7 +37,9 @@ export default function ModalProvider({ children }) {
 		// use state on buttons between web or photog
 
 		if (showWebProjects) {
-			setCurrentProject(portfolioData.find((project) => project.id === id));
+			setCurrentProject(
+				portfolioDataArray.find((project) => project.id === id)
+			);
 			// setCurrentProjectId(id);
 			setDisplayProjectDetailsModal(true);
 		} else {
@@ -48,7 +50,6 @@ export default function ModalProvider({ children }) {
 					return project.id === id;
 				})
 			);
-			// setCurrentIndex(currentProjectId);
 			setShowPhotographyModal(true);
 		}
 	}
@@ -86,24 +87,22 @@ export default function ModalProvider({ children }) {
 
 	function goForwardWeb(event, id) {
 		event.stopPropagation();
-		// setCurrentProjectId(id);
-		setCurrentProject(portfolioDataArray.find((project) => project.id === id));
+		setCurrentProjectId(id);
 		setCurrentIndex(
 			portfolioDataArray.findIndex((project) => {
 				return project.id === id;
 			})
 		);
-
-		function sortData() {
-			portfolioDataArray[currentIndex].src.push(currentProject.src[0]);
-			portfolioDataArray[currentIndex].src.shift();
-		}
-		sortData();
+		setCurrentProject(portfolioDataArray.find((project) => project.id === id));
+		portfolioDataArray[currentIndex].src.push(currentProject.src[0]);
+		portfolioDataArray[currentIndex].src.shift();
 		console.log(portfolioDataArray[currentIndex].src);
-		console.log(currentIndex);
 	}
 
-	console.log(portfolioDataArray);
+	// console.log(currentProjectId);
+	// console.log(currentProject);
+	// console.log(currentIndex);
+	// console.log(portfolioDataArray);
 
 	const value = {
 		displayProjectDetailsModal,

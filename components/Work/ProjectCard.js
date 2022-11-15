@@ -10,6 +10,7 @@ import chevronLeft from "next/image";
 import chevronRight from "next/image";
 import ProjectDetailsModal from "./Project Modal/ProjectDetailsModal";
 import { useModalContext } from "../../Context/ModalContext";
+import { portfolioData } from "./portfolioData";
 
 function ProjectCard(props) {
 	const {
@@ -18,6 +19,7 @@ function ProjectCard(props) {
 		goForwardPicture,
 		goBackPicture,
 		goForwardWeb,
+		portfolioDataArray,
 	} = useModalContext();
 	// const [displayProjectDetails, setDisplayProjectDetails] = useState(false);
 
