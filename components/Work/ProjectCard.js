@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Button from "../Button";
 import Anchor from "../Anchor";
-import arrow from "next/image";
-import expand from "next/image";
-import lightModeIcon from "next/image";
-import darkModeIcon from "next/image";
-import chevronLeft from "next/image";
-import chevronRight from "next/image";
+// import arrow from "next/image";
+// import expand from "next/image";
+// import lightModeIcon from "next/image";
+// import darkModeIcon from "next/image";
+// import chevronLeft from "next/image";
+// import chevronRight from "next/image";
 import ProjectDetailsModal from "./Project Modal/ProjectDetailsModal";
 import { useModalContext } from "../../Context/ModalContext";
 import { portfolioData } from "./portfolioData";
@@ -18,21 +18,30 @@ function ProjectCard(props) {
 		handleModal,
 		goForwardPicture,
 		goBackPicture,
+		goBackWeb,
 		goForwardWeb,
+		currentProjectId,
 		portfolioDataArray,
 	} = useModalContext();
-	// const [displayProjectDetails, setDisplayProjectDetails] = useState(false);
 
-	// function toggleDisplayProjectDetails(e) {
-	//   e.preventDefault();
-	//   setDisplayProjectDetails(!displayProjectDetails);
-	// }
+	// const projectImages = portfolioDataArray.map((project) => (
+	// 	<div>
+	// 		<Image
+	// 			src={project.src[0]}
+	// 			alt=""
+	// 			width="100%"
+	// 			height="50%"
+	// 			layout="responsive"
+	// 			objectFit="contain"
+	// 		/>
+	// 	</div>
+	// ));
 
 	return (
 		<div className="flex flex-col justify-between w-full ">
 			<div className="w-full pt-24 flex justify-between items-center">
 				<Anchor
-					icon={arrow}
+					icon="arrow"
 					href={props.href}
 					name="projectLink"
 					src="/project-arrow.svg"
@@ -43,13 +52,13 @@ function ProjectCard(props) {
 				/>
 				<h3 className="">{props.title}</h3>
 				<Button
-					icon={expand}
+					icon="expand"
 					name="expand"
 					src="/expand.svg"
 					width="24"
 					height="24"
 					onClickFunction={(event) => handleModal(event, props.id)}
-					id={props.id}
+					// id={props.id}
 					pCard
 				/>
 			</div>
@@ -57,7 +66,7 @@ function ProjectCard(props) {
 			<div className="w-full flex justify-center mb-5">
 				{props.displayDarkModeToggle && !props.darkMode ? (
 					<Button
-						icon={lightModeIcon}
+						icon="lightModeIcon"
 						name="toggleDark"
 						src="/light-mode.svg"
 						width="32"
@@ -67,7 +76,7 @@ function ProjectCard(props) {
 					/>
 				) : props.displayDarkModeToggle && props.darkMode ? (
 					<Button
-						icon={darkModeIcon}
+						icon="darkModeIcon"
 						name="toggleDark"
 						src="/dark-mode.svg"
 						width="32"
@@ -80,8 +89,8 @@ function ProjectCard(props) {
 
 			<div className="flex justify-center items-center">
 				<Button
-					onClickFunction={goForwardWeb}
-					icon={chevronLeft}
+					onClickFunction={(event) => goBackWeb(event, id)}
+					icon="chevronLeft"
 					src="/chevron-left.svg"
 					width="32"
 					height="32"
@@ -98,8 +107,8 @@ function ProjectCard(props) {
 					/>
 				</div>
 				<Button
-					onClickFunction={(event) => goForwardWeb(event, props.id)}
-					icon={chevronRight}
+					onClickFunction={(event) => goForwardWeb(event, id)}
+					icon="chevronRight"
 					src="/chevron-right.svg"
 					width="32"
 					height="32"

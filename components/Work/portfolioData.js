@@ -1,35 +1,39 @@
 export const portfolioData = [
-	// ADD IN USER LOGIN FOR RECRUITERS
 	{
-		id: 1,
+		id: 0,
 		title: "Expenses Tracker",
-		resources: [["HTML"], ["CSS"], ["ReactJS"], ["Firebase"]],
+		resources: ["HTML", "CSS", "ReactJS", "Firebase"],
 		description:
 			"This expenses tracking web application was built with React.\n\nUser account and database storage were integrated through Google's Firebase service, providing users with the ability to register with Google, alongside the classic e-mail/password authentication.\nThe application is divided into three core pages; dashboard, expenses, settings.\nThis is a fully responsive application, enabling usage across a range of devices, alongside this, both a light and dark theme were also integrated into the design of the app to further benefit user experience.",
-		src: {
-			light: "/expenses-tracker-1.svg",
-			dark: "/expenses-tracker-1-dark.PNG",
-		},
+		src: [
+			"/expenses-tracker-2.png",
+			"/expenses-tracker-3.png",
+			"/expenses-tracker-4.png",
+		],
+		// {
+		// 	light: "/expenses-tracker-1.svg",
+		// 	dark: "/expenses-tracker-1-dark.PNG",
+		// },
 		displayDarkModeToggle: "displayDarkModeToggle",
 		href: "https://expenses-tracker-je.netlify.app/",
 	},
 	{
-		id: 2,
+		id: 1,
 		title: "Text-to-Markdown",
 		resources: ["HTML", "CSS", "ReactJS", "Firebase"],
 		description:
 			"The text-to-markdown notes app was built using React, utilising react-mde, helping simplify the curation of markdown text passages.\n\nUser authentication and database storage was integrated using Firebase, allowing users to access the app on different devices.\nUpon creating a note, users can see creation date and update individual note titles which will dynamically change the routing.\nValidation was added to the contact form using Regex, displaying messages if any fields require changes.",
 		src: [
-			"/expenses-tracker-2.png",
-			"/expenses-tracker-3.png",
 			"/expenses-tracker-4.png",
+			"/expenses-tracker-3.png",
+			"/expenses-tracker-2.png",
 		],
 
 		darkMode: "",
 		href: "https://t2t-notes-app.netlify.app",
 	},
 	{
-		id: 3,
+		id: 2,
 		title: "Meme Generator",
 		resources: ["HTML", "CSS", "ReactJS"],
 		description:
@@ -44,7 +48,7 @@ export const portfolioData = [
 		href: "https://je-tenzies.netlify.app/",
 	},
 	{
-		id: 4,
+		id: 3,
 		title: "Tenzies Game",
 		resources: ["HTML", "CSS", "ReactJS"],
 		description:
@@ -57,7 +61,7 @@ export const portfolioData = [
 		href: "https://je-meme-generator.netlify.app/",
 	},
 	{
-		id: 5,
+		id: 4,
 		title: "Accordion",
 		resources: ["HTML", "CSS", "ReactJS"],
 		description:

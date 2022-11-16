@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
+// import github from "next/image";
+// import lightModeIcon from "next/image";
+// import darkModeIcon from "next/image";
+// import chevronLeft from "next/image";
+// import chevronRight from "next/image";
 
 function Button(props) {
 	return (

@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { BsCameraFill } from "react-icons/bs";
 import Image from "next/image";
 import landingImg from "next/image";
+import arrow from "next/image";
+import expand from "next/image";
+import emailIcon from "next/image";
+import linkedIn from "next/image";
 
 function Anchor(props) {
 	const [displayedWork, setDisplayedWork] = useState(true);
@@ -28,7 +32,7 @@ function Anchor(props) {
 					<Image
 						// className={props.iconClassName}
 						name={props.name}
-						icon={props.icon}
+						// icon={props.icon}
 						src={props.src}
 						width={props.height}
 						height={props.height}

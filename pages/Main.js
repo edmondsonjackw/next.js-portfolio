@@ -15,7 +15,7 @@ function Main() {
 					value={""}
 					name="github"
 					href="https://github.com/Edmndsn"
-					icon={github}
+					icon="github"
 					src={"/github-icon.svg"}
 					width="24"
 					height="24"
@@ -26,7 +26,7 @@ function Main() {
 					value={""}
 					name="linkedin"
 					href="https://www.linkedin.com/in/jackedmondson/"
-					icon={linkedIn}
+					icon="linkedIn"
 					src="/linkedin1-icon.svg"
 					width="24"
 					height="24"

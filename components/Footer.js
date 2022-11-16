@@ -1,6 +1,6 @@
 import React from "react";
 import Anchor from "./Anchor";
-import Github from "next/image";
+import github from "next/image";
 
 function Footer() {
 	return (
@@ -16,7 +16,7 @@ function Footer() {
 				value={""}
 				name="About"
 				href="https://github.com/Edmndsn"
-				icon={Github}
+				icon="github"
 				src={"/github-icon.svg"}
 				width="24"
 				height="24"

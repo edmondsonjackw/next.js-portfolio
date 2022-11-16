@@ -7,14 +7,14 @@ import linkedIn from "next/image";
 
 function Contact() {
 	return (
-		<div className="flex flex-col items-center min-h-screen">
+		<div id="contact" className="flex flex-col items-center min-h-screen">
 			<div className="flex flex-col justify-between items-center m-auto gap-4">
 				<h3 className="italic">Reach out. </h3>
 				<div className="flex gap-4 mt-4">
 					<Anchor
 						value=""
 						href="mailto:edmondson.jackw@gmail.com"
-						icon={emailIcon}
+						icon="emailIcon"
 						src="/email-icon.svg"
 						width="24"
 						height="24"
@@ -24,7 +24,7 @@ function Contact() {
 						value={""}
 						name="About"
 						href="https://www.linkedin.com/in/jackedmondson/"
-						icon={linkedIn}
+						icon="linkedIn"
 						src={"/linkedin1-icon.svg"}
 						width="24"
 						height="24"

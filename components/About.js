@@ -5,7 +5,9 @@ import Skills from "./Skills";
 
 function About() {
 	return (
-		<div className="min-h-screen grid grid-cols-10 mt-12 gap-4 space-y-4 mx-14 sm:mx-20 md:mx-22 lg:mx-24 xl:mx-28">
+		<div
+			id="about"
+			className="min-h-screen grid grid-cols-10 mt-12  gap-4 space-y-4 mx-14 sm:mx-20 md:mx-22 lg:mx-24 xl:mx-28">
 			<h2 className="col-span-10 place-self-center">ABOUT</h2>
 			<div className="col-span-10 sm:col-span-6 flex flex-col justify-center items-center mx-auto gap-1 md-gap:2 lg:gap-3 xl:gap-4 sm:items-start text-center sm:text-left max-w-[440px] sm:max-w-none">
 				<p className="">
