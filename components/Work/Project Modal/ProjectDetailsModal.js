@@ -1,6 +1,6 @@
 import React from "react";
 import Anchor from "../../Anchor";
-import closeIcon from "next/image";
+// import closeIcon from "next/image";
 import Button from "../../Button";
 import { useModalContext } from "../../../Context/ModalContext";
 
@@ -15,7 +15,7 @@ function ProjectDetailsModal(props) {
 				className={`flex flex-col w-3/6 h-fit m-auto rounded-lg py-8 px-4 bg-black 900 bg-opacity-70`}>
 				<div className="place-self-end ">
 					<Button
-						icon={closeIcon}
+						icon="closeIcon"
 						name="close"
 						src="/close-icon.svg"
 						height="32"

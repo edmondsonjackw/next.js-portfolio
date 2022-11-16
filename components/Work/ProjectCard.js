@@ -89,7 +89,7 @@ function ProjectCard(props) {
 
 			<div className="flex justify-center items-center">
 				<Button
-					onClickFunction={(event) => goBackWeb(event, id)}
+					onClickFunction={(event) => goBackWeb(event, props.id)}
 					icon="chevronLeft"
 					src="/chevron-left.svg"
 					width="32"
@@ -107,7 +107,7 @@ function ProjectCard(props) {
 					/>
 				</div>
 				<Button
-					onClickFunction={(event) => goForwardWeb(event, id)}
+					onClickFunction={(event) => goForwardWeb(event, props.id)}
 					icon="chevronRight"
 					src="/chevron-right.svg"
 					width="32"

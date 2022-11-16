@@ -14,35 +14,37 @@ export default function ModalProvider({ children }) {
 	const [showPhotographyModal, setShowPhotographyModal] = useState(false);
 	const [portfolioDataArray, setPortfolioDataArray] = useState([]);
 	const [currentProject, setCurrentProject] = useState({});
-	const [currentProjectId, setCurrentProjectId] = useState("");
+	const [currentProjectId, setCurrentProjectId] = useState(0);
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [showWebProjects, setShowWebProjects] = useState(true);
 
-	// useEffect(() => {
-	// 	setPortfolioDataArray(portfolioData);
-	// }, [portfolioDataArray]);
+	useEffect(() => {
+		setPortfolioDataArray(portfolioData);
+	}, [portfolioDataArray]);
 
 	function setWorkDisplayed(event) {
 		event.preventDefault();
 		setShowWebProjects((prev) => !prev);
 		handleModalClose();
 		setCurrentProject("");
-		setCurrentProjectId("");
+		setCurrentProjectId(0);
+		setCurrentIndex(0);
 	}
 
 	function handleModal(event, id) {
-		event.preventDefault();
-		setCurrentProjectId(id);
+		event.stopPropagation();
 		if (showWebProjects) {
-			const newProject = portfolioDataArray.find(
-				(project) => project.id === id
+			setCurrentProject(
+				portfolioDataArray.find((project) => project.id === id)
 			);
-			setCurrentProject(newProject);
-			// setCurrentProjectId(id);
+			setCurrentIndex(
+				portfolioDataArray.findIndex((project) => {
+					return project.id === id;
+				})
+			);
 			setDisplayProjectDetailsModal(true);
 		} else {
 			setCurrentProject(photographyData.find((photo) => photo.id === id));
-			// setCurrentProjectId(id);
 			setCurrentIndex(
 				photographyData.findIndex((project) => {
 					return project.id === id;
@@ -50,6 +52,7 @@ export default function ModalProvider({ children }) {
 			);
 			setShowPhotographyModal(true);
 		}
+		setCurrentProjectId(id);
 	}
 
 	function handleModalClose() {
@@ -57,10 +60,10 @@ export default function ModalProvider({ children }) {
 			setDisplayProjectDetailsModal(false);
 		} else {
 			setShowPhotographyModal(false);
-			setCurrentProject("");
-			setCurrentProjectId(0);
-			setCurrentIndex(0);
 		}
+		setCurrentProject("");
+		setCurrentProjectId(0);
+		setCurrentIndex(0);
 	}
 
 	function goForwardPicture() {
@@ -86,68 +89,38 @@ export default function ModalProvider({ children }) {
 	function goBackWeb(event, id) {
 		event.stopPropagation();
 		setCurrentProjectId(id);
+		setCurrentProject(portfolioDataArray.find((project) => project.id === id));
 		setCurrentIndex(
 			portfolioDataArray.findIndex((project) => {
 				return project.id === id;
 			})
 		);
-		setCurrentProject(portfolioDataArray.find((project) => project.id === id));
-		// console.log(currentProject.src);
-		// portfolioDataArray[currentIndex].src.push(currentProject.src.indexOf(0));
-		portfolioDataArray[currentIndex].src.unshift(
+		const newArr = portfolioDataArray[currentIndex].src.unshift(
 			portfolioDataArray[currentIndex].src.pop()
 		);
-		// setPortfolioDataArray(updatedPortfolioDataArray);
-		// portfolioDataArray[currentIndex].src.shift();
-		console.log(portfolioDataArray[currentIndex].src);
-		console.log(currentProject);
-		console.log(currentProjectId);
-		console.log(currentIndex);
+		setPortfolioDataArray(newArr);
 	}
 
 	function goForwardWeb(event, id) {
 		event.stopPropagation();
 		setCurrentProjectId(id);
-		// setCurrentProject(portfolioDataArray.find((project) => project.id === id));
-
+		setCurrentProject(portfolioDataArray.find((project) => project.id === id));
 		setCurrentIndex(
 			portfolioDataArray.findIndex((project) => {
 				return project.id === id;
 			})
 		);
-		console.log(currentProject);
-		console.log(currentProjectId);
-		console.log(currentIndex);
-
-		// portfolioDataArray[currentIndex].src.push(
-		// 	portfolioDataArray[currentIndex].src.shift()
-		// );
-		// const currentProjectSrc = currentProject.src.slice(0, -1);
-
-		// console.log(currentProjectSrc);
-
-		// portfolioDataArray[currentIndex].src.slice(0, -1);
-		// const newArray = portfolioDataArray[currentIndex].src.slice(0, -1);
-		// const newArray = [...portfolioDataArray, currentProjectSrc];
-		// portfolioDataArray[currentIndex].src.push(
-		// 	portfolioDataArray[currentIndex].src.shift()
-		// );
-
-		// console.log(newArray);
-
-		// console.log(portfolioDataArray[currentIndex].src);
-		// console.log(portfolioDataArray[currentIndex]);
-		// setPortfolioDataArray(updatedPortfolioDataArray);
-		// portfolioDataArray[currentIndex].src.shift();
-		// console.log(portfolioDataArray[currentIndex].src);
-		// console.log(currentIndex);
-		// console.log(currentProjectId);
+		const newArr = portfolioDataArray[currentIndex].src.push(
+			portfolioDataArray[currentIndex].src.shift()
+		);
+		setPortfolioDataArray(newArr);
 	}
 
-	// console.log(currentProjectId);
-	// console.log(currentProject);
-	// console.log(currentIndex);
 	// console.log(portfolioDataArray);
+	// console.log(portfolioDataArray[currentIndex]);
+	// console.log(currentProject);
+	// console.log(currentProjectId);
+	// console.log(currentIndex);
 
 	const value = {
 		displayProjectDetailsModal,

@@ -47,7 +47,7 @@ function Work() {
 			displayDarkModeToggle={project.displayDarkModeToggle}
 			darkMode={darkMode}
 			handleDark={handleDark}
-			handleModal={handleModal}
+			// handleModal={handleModal}
 		/>
 	));
 	return (
