@@ -23,6 +23,7 @@ function Button(props) {
           `}
 				onClick={props.onClickFunction}
 				name={props.name}
+				id={props.id}
 				disabled={props.disabled}>
 				{props.icon && (
 					<Image

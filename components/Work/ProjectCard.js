@@ -107,7 +107,14 @@ function ProjectCard(props) {
 					/>
 				</div>
 				<Button
-					onClickFunction={(event) => goForwardWeb(event, props.id)}
+					onClickFunction={(event) =>
+						goForwardWeb(
+							event,
+							props.id,
+							props.darkMode,
+							props.displayDarkModeToggle
+						)
+					}
 					icon="chevronRight"
 					src="/chevron-right.svg"
 					width="32"

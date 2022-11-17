@@ -17,6 +17,7 @@ export default function ModalProvider({ children }) {
 	const [currentProjectId, setCurrentProjectId] = useState(0);
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [showWebProjects, setShowWebProjects] = useState(true);
+	const [darkMode, setDarkMode] = useState(false);
 
 	useEffect(() => {
 		setPortfolioDataArray(portfolioData);
@@ -88,32 +89,32 @@ export default function ModalProvider({ children }) {
 
 	function goBackWeb(event, id) {
 		event.stopPropagation();
-		setCurrentProjectId(id);
-		setCurrentProject(portfolioDataArray.find((project) => project.id === id));
-		setCurrentIndex(
-			portfolioDataArray.findIndex((project) => {
-				return project.id === id;
-			})
-		);
-		const newArr = portfolioDataArray[currentIndex].src.unshift(
-			portfolioDataArray[currentIndex].src.pop()
+		const index = id;
+		const newArr = portfolioDataArray[index].src.unshift(
+			portfolioDataArray[index].src.pop()
 		);
 		setPortfolioDataArray(newArr);
 	}
 
-	function goForwardWeb(event, id) {
+	function goForwardWeb(event, id, darkMode, displayDarkModeToggle) {
 		event.stopPropagation();
-		setCurrentProjectId(id);
-		setCurrentProject(portfolioDataArray.find((project) => project.id === id));
-		setCurrentIndex(
-			portfolioDataArray.findIndex((project) => {
-				return project.id === id;
-			})
-		);
-		const newArr = portfolioDataArray[currentIndex].src.push(
-			portfolioDataArray[currentIndex].src.shift()
-		);
-		setPortfolioDataArray(newArr);
+		const index = id;
+		if (!darkMode && displayDarkModeToggle) {
+			const newArr = portfolioDataArray[index].src.light.push(
+				portfolioDataArray[index].src.light.shift()
+			);
+			setPortfolioDataArray(newArr);
+		} else if (darkMode && displayDarkModeToggle) {
+			const newArr = portfolioDataArray[index].src.dark.push(
+				portfolioDataArray[index].src.dark.shift()
+			);
+			setPortfolioDataArray(newArr);
+		} else {
+			const newArr = portfolioDataArray[index].src.push(
+				portfolioDataArray[index].src.shift()
+			);
+			setPortfolioDataArray(newArr);
+		}
 	}
 
 	// console.log(portfolioDataArray);
@@ -142,6 +143,8 @@ export default function ModalProvider({ children }) {
 		goBackWeb,
 		goForwardWeb,
 		portfolioDataArray,
+		darkMode,
+		setDarkMode,
 	};
 	return (
 		<ModalContext.Provider value={value}>{children}</ModalContext.Provider>

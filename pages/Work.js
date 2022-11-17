@@ -22,10 +22,11 @@ function Work() {
 		setShowWebProjects,
 		setWorkDisplayed,
 		portfolioDataArray,
+		darkMode,
+		setDarkMode,
 	} = useModalContext();
 	// -----------------------------------------------------
 
-	const [darkMode, setDarkMode] = useState(false);
 	function handleDark(e) {
 		e.preventDefault();
 		setDarkMode((prev) => !prev);
@@ -36,13 +37,14 @@ function Work() {
 			key={project.id}
 			id={project.id}
 			title={project.title}
-			src={project.src[0]}
-			// 	!darkMode && project.displayDarkModeToggle
-			// 		? project.src.light
-			// 		: darkMode && project.displayDarkModeToggle
-			// 		? project.src.dark
-			// 		: project.src[0]
-			// }
+			// src={project.src[0]}
+			src={
+				!darkMode && project.displayDarkModeToggle
+					? project.src.light[0]
+					: darkMode && project.displayDarkModeToggle
+					? project.src.dark[0]
+					: project.src[0]
+			}
 			href={project.href}
 			displayDarkModeToggle={project.displayDarkModeToggle}
 			darkMode={darkMode}
