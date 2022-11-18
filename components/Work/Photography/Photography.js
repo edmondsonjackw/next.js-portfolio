@@ -4,17 +4,8 @@ import Image from "next/image";
 import { useModalContext } from "../../../Context/ModalContext";
 
 function Photography(props) {
-	const {
-		handleModal,
-		showPhotographyModal,
-		goForwardPicture,
-		goBackPicture,
-		currentIndex,
-	} = useModalContext();
-	// function openModal(e) {
-	//   e.preventDefault();
-	//   setShowPhotographyModal(prev => !prev);
-	// }
+	const { handleModal } = useModalContext();
+
 	const photographyArray = photographyData.map((photo) => (
 		// <div className="w-full h-full max-w-sm hover:max-w-2xl transition-all duration-1000 border-2 rounded-lg border-primary space-x-10 space-y-4 px-4 m-4">
 		<div
@@ -38,7 +29,6 @@ function Photography(props) {
 			/>
 		</div>
 	));
-	// .unshift(photo.position === "Horizontal");
 
 	return (
 		// <div className="min-w-screen grid grid-cols-5 gap-4">
