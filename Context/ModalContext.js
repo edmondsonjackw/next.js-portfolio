@@ -100,12 +100,12 @@ export default function ModalProvider({ children }) {
 		event.stopPropagation();
 		const index = id;
 		if (!darkMode && displayDarkModeToggle) {
-			const newArr = portfolioDataArray[index].src.unshift(
+			const newArr = portfolioDataArray[index].src.light.unshift(
 				portfolioDataArray[index].src.pop()
 			);
 			setPortfolioDataArray(newArr);
 		} else if (darkMode && displayDarkModeToggle) {
-			const newArr = portfolioDataArray[index].src.unshift(
+			const newArr = portfolioDataArray[index].src.dark.unshift(
 				portfolioDataArray[index].src.pop()
 			);
 			setPortfolioDataArray(newArr);
