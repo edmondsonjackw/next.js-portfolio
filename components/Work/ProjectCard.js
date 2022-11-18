@@ -2,14 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Button from "../Button";
 import Anchor from "../Anchor";
-// import arrow from "next/image";
-// import expand from "next/image";
-// import lightModeIcon from "next/image";
-// import darkModeIcon from "next/image";
-// import chevronLeft from "next/image";
-// import chevronRight from "next/image";
 import { useModalContext } from "../../Context/ModalContext";
-import { portfolioData } from "./portfolioData";
 
 function ProjectCard(props) {
 	const {
