@@ -126,7 +126,7 @@ export const PhotographyData = [
 	},
 	{
 		id: 26,
-		src: "/../public/photography/photog26.jpg",
+		src: "/Photography/photog26.jpg",
 		position: "Portrait",
 	},
 	{
