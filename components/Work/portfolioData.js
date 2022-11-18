@@ -5,24 +5,6 @@ export const portfolioData = [
 		resources: ["HTML", "CSS", "ReactJS", "Firebase"],
 		description:
 			"This expenses tracking web application was built with React.\n\nUser account and database storage were integrated through Google's Firebase service, providing users with the ability to register with Google, alongside the classic e-mail/password authentication.\nThe application is divided into three core pages; dashboard, expenses, settings.\nThis is a fully responsive application, enabling usage across a range of devices, alongside this, both a light and dark theme were also integrated into the design of the app to further benefit user experience.",
-		// src: [
-		// 	"/Projects/Expenses/expenses-1.png",
-		// 	"/Projects/Expenses/expenses-2.png",
-		// 	"/Projects/Expenses/expenses-light-1.png",
-		// 	"/Projects/Expenses/expenses-light-2.png",
-		// 	"/Projects/Expenses/expenses-light-3.png",
-		// 	"/Projects/Expenses/expenses-light-4.png",
-		// 	"/Projects/Expenses/expenses-light-5.png",
-		// 	"/Projects/Expenses/expenses-light-6.png",
-		// 	"/Projects/Expenses/expenses-light-7.png",
-		// 	"/Projects/Expenses/expenses-dark-1.png",
-		// 	"/Projects/Expenses/expenses-dark-2.png",
-		// 	"/Projects/Expenses/expenses-dark-3.png",
-		// 	"/Projects/Expenses/expenses-dark-4.png",
-		// 	"/Projects/Expenses/expenses-dark-5.png",
-		// 	"/Projects/Expenses/expenses-dark-6.png",
-		// 	"/Projects/Expenses/expenses-dark-7.png",
-		// ],
 		src: {
 			light: [
 				"/Projects/Expenses/expenses-1.png",
@@ -36,8 +18,6 @@ export const portfolioData = [
 				"/Projects/Expenses/expenses-light-7.png",
 			],
 			dark: [
-				"/Projects/Expenses/expenses-1.png",
-				"/Projects/Expenses/expenses-2.png",
 				"/Projects/Expenses/expenses-dark-1.png",
 				"/Projects/Expenses/expenses-dark-2.png",
 				"/Projects/Expenses/expenses-dark-3.png",

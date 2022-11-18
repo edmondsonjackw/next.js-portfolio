@@ -1,43 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Button from "../Button";
 import Anchor from "../Anchor";
 import { useModalContext } from "../../Context/ModalContext";
 
 function ProjectCard(props) {
-	const {
-		currentIndex,
-		handleModal,
-		goForwardPicture,
-		goBackPicture,
-		goBackWeb,
-		goForwardWeb,
-		currentProjectId,
-		portfolioDataArray,
-	} = useModalContext();
+	const { handleModal, goBackWeb, goForwardWeb } = useModalContext();
 
 	return (
 		<div className="flex flex-col justify-between w-full ">
 			<div className="w-full pt-24 px-3 sm:px-5 md:px-5 lg:px-6 flex justify-between items-center">
 				<Anchor
 					icon="arrow"
-					href={props.href}
 					name="projectLink"
-					src="/project-arrow.svg"
+					src="/Icons/project-arrow.svg"
+					href={props.href}
+					target="_blank"
 					width="32"
 					height="32"
-					target="_blank"
 					pCard
 				/>
-				<h3 className="">{props.title}</h3>
+				<h3>{props.title}</h3>
 				<Button
 					icon="expand"
 					name="expand"
-					src="/expand.svg"
+					src="/Icons/expand.svg"
 					width="32"
 					height="32"
 					onClickFunction={(event) => handleModal(event, props.id)}
-					// id={props.id}
 					pCard
 				/>
 			</div>
@@ -47,20 +37,18 @@ function ProjectCard(props) {
 					<Button
 						icon="lightModeIcon"
 						name="toggleDark"
-						src="/light-mode.svg"
+						src="/Icons/light-mode.svg"
 						width="32"
 						height="32"
-						// darkMode={props.darkMode}
 						onClickFunction={props.handleDark}
 					/>
 				) : props.displayDarkModeToggle && props.darkMode ? (
 					<Button
 						icon="darkModeIcon"
 						name="toggleDark"
-						src="/dark-mode.svg"
+						src="/Icons/dark-mode.svg"
 						width="32"
 						height="32"
-						// darkMode={props.darkMode}
 						onClickFunction={props.handleDark}
 					/>
 				) : null}
@@ -77,10 +65,9 @@ function ProjectCard(props) {
 						)
 					}
 					icon="chevronLeft"
-					src="/chevron-left.svg"
+					src="/Icons/chevron-left.svg"
 					width="32"
 					height="32"
-					id={props.id}
 				/>
 				<div className="w-full">
 					<Image
@@ -102,10 +89,9 @@ function ProjectCard(props) {
 						)
 					}
 					icon="chevronRight"
-					src="/chevron-right.svg"
+					src="/Icons/chevron-right.svg"
 					width="32"
 					height="32"
-					id={props.id}
 				/>
 			</div>
 		</div>

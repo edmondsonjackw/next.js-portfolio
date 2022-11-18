@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
-import Anchor from "../components/Anchor";
+import React from "react";
 import { portfolioData } from "../components/Work/portfolioData.js";
 import ProjectCard from "../components/Work/ProjectCard";
 import Button from "../components/Button";
 import ProjectDetailsModal from "../components/Work/Project Modal/ProjectDetailsModal";
 import Photography from "../components/Work/Photography/Photography";
-import { PhotographyData } from "../components/Work/PhotographyData";
 import { useModalContext } from "../Context/ModalContext";
 
 function Work() {
@@ -15,17 +13,12 @@ function Work() {
 		handleModal,
 		handleModalClose,
 		currentProject,
-		setCurrentProject,
 		currentProjectId,
-		setCurrentProjectId,
 		showWebProjects,
-		setShowWebProjects,
 		setWorkDisplayed,
-		portfolioDataArray,
 		darkMode,
 		setDarkMode,
 	} = useModalContext();
-	// -----------------------------------------------------
 
 	function handleDark(e) {
 		e.preventDefault();
@@ -37,7 +30,6 @@ function Work() {
 			key={project.id}
 			id={project.id}
 			title={project.title}
-			// src={project.src[0]}
 			src={
 				!darkMode && project.displayDarkModeToggle
 					? project.src.light[0]
@@ -49,7 +41,6 @@ function Work() {
 			displayDarkModeToggle={project.displayDarkModeToggle}
 			darkMode={darkMode}
 			handleDark={handleDark}
-			// handleModal={handleModal}
 		/>
 	));
 	return (
@@ -70,12 +61,9 @@ function Work() {
 					showWebProjects={showWebProjects}
 				/>
 			</div>
-			{/* {displayProjectDetailsModal && currentProjectId === currentProject.id && ( */}
 			{displayProjectDetailsModal && (
 				<ProjectDetailsModal
 					key={portfolioData.id}
-					// resources={props.resources}
-					// description={props.description}
 					handleModal={handleModal}
 					currentProjectId={currentProjectId}
 					currentProject={currentProject}
@@ -83,10 +71,8 @@ function Work() {
 					resources={currentProject.resources}
 					description={currentProject.description}
 					handleModalClose={handleModalClose}
-					// portfolioData={portfolioData}
 				/>
 			)}
-
 			{showWebProjects ? (
 				<>{portfolioArray}</>
 			) : (
@@ -97,12 +83,9 @@ function Work() {
 						handleModal={handleModal}
 						handleModalClose={handleModalClose}
 						showPhotographyModal={showPhotographyModal}
-						// pageX={pageX}
-						// pageY={pageY}
 					/>
 				</>
 			)}
-			{/* {portfolioArray} */}
 		</>
 	);
 }

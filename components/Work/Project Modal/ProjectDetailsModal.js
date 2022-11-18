@@ -1,6 +1,4 @@
 import React from "react";
-import Anchor from "../../Anchor";
-// import closeIcon from "next/image";
 import Button from "../../Button";
 import { useModalContext } from "../../../Context/ModalContext";
 
@@ -17,11 +15,10 @@ function ProjectDetailsModal(props) {
 					<Button
 						icon="closeIcon"
 						name="close"
-						src="/close-icon.svg"
+						src="/Icons/close-icon.svg"
 						height="32"
 						width="32"
 						onClickFunction={handleModalClose}
-						// handleCloseModal={props.handleCloseModal}
 					/>
 				</div>
 				<div className="space-y-10">
@@ -29,12 +26,9 @@ function ProjectDetailsModal(props) {
 						<h3 className="text-center">{props.title}</h3>
 						<p className="border-2 border-primary">{props.resources}</p>
 					</div>
-					<div
-						className="
-          ">
+					<div className="">
 						<p className="whitespace-pre-wrap">{props.description}</p>
 					</div>
-					<div></div>
 				</div>
 			</div>
 		</div>
