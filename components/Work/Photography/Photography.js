@@ -25,7 +25,7 @@ function Photography(props) {
 			<Image
 				key={photo.id}
 				src={photo.src}
-				position={photo.position}
+				// position={photo.position}
 				// width={photo.position === "Horizontal" ? "1700" : "1024"}
 				// height={photo.position === "Horizontal" ? "1024" : "1545"}
 				width="100%"
