@@ -87,13 +87,34 @@ export default function ModalProvider({ children }) {
 		}
 	}
 
-	function goBackWeb(event, id) {
+	// function goBackWeb(event, id) {
+	// 	event.stopPropagation();
+	// 	const index = id;
+	// 	const newArr = portfolioDataArray[index].src.unshift(
+	// 		portfolioDataArray[index].src.pop()
+	// 	);
+	// 	setPortfolioDataArray(newArr);
+	// }
+
+	function goBackWeb(event, id, darkMode, displayDarkModeToggle) {
 		event.stopPropagation();
 		const index = id;
-		const newArr = portfolioDataArray[index].src.unshift(
-			portfolioDataArray[index].src.pop()
-		);
-		setPortfolioDataArray(newArr);
+		if (!darkMode && displayDarkModeToggle) {
+			const newArr = portfolioDataArray[index].src.unshift(
+				portfolioDataArray[index].src.pop()
+			);
+			setPortfolioDataArray(newArr);
+		} else if (darkMode && displayDarkModeToggle) {
+			const newArr = portfolioDataArray[index].src.unshift(
+				portfolioDataArray[index].src.pop()
+			);
+			setPortfolioDataArray(newArr);
+		} else {
+			const newArr = portfolioDataArray[index].src.unshift(
+				portfolioDataArray[index].src.pop()
+			);
+			setPortfolioDataArray(newArr);
+		}
 	}
 
 	function goForwardWeb(event, id, darkMode, displayDarkModeToggle) {
