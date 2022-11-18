@@ -89,7 +89,14 @@ function ProjectCard(props) {
 
 			<div className="flex justify-center items-center gap-4">
 				<Button
-					onClickFunction={(event) => goBackWeb(event, props.id)}
+					onClickFunction={(event) =>
+						goBackWeb(
+							event,
+							props.id,
+							props.darkMode,
+							props.displayDarkModeToggle
+						)
+					}
 					icon="chevronLeft"
 					src="/chevron-left.svg"
 					width="32"
