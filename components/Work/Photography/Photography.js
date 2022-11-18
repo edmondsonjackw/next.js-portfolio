@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { photographyData } from "./PhotographyData";
+import { PhotographyData } from "./PhotographyData";
 import Image from "next/image";
 import { useModalContext } from "../../../Context/ModalContext";
 
 function Photography(props) {
 	const { handleModal } = useModalContext();
 
-	const photographyArray = photographyData.map((photo) => (
+	const photographyArray = PhotographyData.map((photo) => (
 		// <div className="w-full h-full max-w-sm hover:max-w-2xl transition-all duration-1000 border-2 rounded-lg border-primary space-x-10 space-y-4 px-4 m-4">
 		<div
 			key={photo.id}
