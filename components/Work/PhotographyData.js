@@ -49,11 +49,11 @@ export const PhotographyData = [
 		src: "/Photography/photog10.jpg",
 		position: "Horizontal",
 	},
-	{
-		id: 11,
-		src: "/Photography/photog11.jpg",
-		position: "Portrait",
-	},
+	// {
+	// 	id: 11,
+	// 	src: "/Photography/photog11.jpg",
+	// 	position: "Portrait",
+	// },
 	{
 		id: 12,
 		src: "/Photography/photog12.jpg",
