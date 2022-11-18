@@ -5,7 +5,7 @@ import ProjectCard from "../components/Work/ProjectCard";
 import Button from "../components/Button";
 import ProjectDetailsModal from "../components/Work/Project Modal/ProjectDetailsModal";
 import Photography from "../components/Work/Photography/Photography";
-import { photographyData } from "../components/Work/Photography/PhotographyData";
+import { PhotographyData } from "../components/Work/PhotographyData";
 import { useModalContext } from "../Context/ModalContext";
 
 function Work() {

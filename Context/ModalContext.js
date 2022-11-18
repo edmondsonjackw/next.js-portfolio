@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { portfolioData } from "../components/Work/portfolioData.js";
-import { photographyData } from "../components/Work/PhotographyData";
+import { PhotographyData } from "../components/Work/PhotographyData";
 
 const ModalContext = createContext();
 
@@ -45,9 +45,9 @@ export default function ModalProvider({ children }) {
 			);
 			setDisplayProjectDetailsModal(true);
 		} else {
-			setCurrentProject(photographyData.find((photo) => photo.id === id));
+			setCurrentProject(PhotographyData.find((photo) => photo.id === id));
 			setCurrentIndex(
-				photographyData.findIndex((project) => {
+				PhotographyData.findIndex((project) => {
 					return project.id === id;
 				})
 			);
@@ -68,22 +68,22 @@ export default function ModalProvider({ children }) {
 	}
 
 	function goForwardPicture() {
-		if (currentIndex === photographyData.length - 1) {
+		if (currentIndex === PhotographyData.length - 1) {
 			setCurrentIndex(0);
-			setCurrentProject(photographyData[0]);
+			setCurrentProject(PhotographyData[0]);
 		} else {
 			setCurrentIndex(currentIndex + 1);
-			setCurrentProject(photographyData[currentIndex + 1]);
+			setCurrentProject(PhotographyData[currentIndex + 1]);
 		}
 	}
 
 	function goBackPicture() {
 		if (currentIndex === 0) {
-			setCurrentIndex(photographyData.length - 1);
-			setCurrentProject(photographyData[photographyData.length - 1]);
+			setCurrentIndex(PhotographyData.length - 1);
+			setCurrentProject(PhotographyData[PhotographyData.length - 1]);
 		} else {
 			setCurrentIndex(currentIndex - 1);
-			setCurrentProject(photographyData[currentIndex - 1]);
+			setCurrentProject(PhotographyData[currentIndex - 1]);
 		}
 	}
 
