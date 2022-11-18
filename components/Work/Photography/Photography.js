@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { photographyData } from "../PhotographyData";
+import { photographyData } from "./PhotographyData";
 import Image from "next/image";
 import { useModalContext } from "../../../Context/ModalContext";
 

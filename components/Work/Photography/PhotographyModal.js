@@ -5,7 +5,6 @@ import Image from "next/image";
 import chevronLeft from "next/image";
 import chevronRight from "next/image";
 
-import { photographyData } from "./PhotographyData";
 import { useModalContext } from "../../../Context/ModalContext";
 
 function PhotographyModal(props) {
