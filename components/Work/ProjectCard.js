@@ -8,7 +8,6 @@ import Anchor from "../Anchor";
 // import darkModeIcon from "next/image";
 // import chevronLeft from "next/image";
 // import chevronRight from "next/image";
-import ProjectDetailsModal from "./Project Modal/ProjectDetailsModal";
 import { useModalContext } from "../../Context/ModalContext";
 import { portfolioData } from "./portfolioData";
 
@@ -23,19 +22,6 @@ function ProjectCard(props) {
 		currentProjectId,
 		portfolioDataArray,
 	} = useModalContext();
-
-	// const projectImages = portfolioDataArray.map((project) => (
-	// 	<div>
-	// 		<Image
-	// 			src={project.src[0]}
-	// 			alt=""
-	// 			width="100%"
-	// 			height="50%"
-	// 			layout="responsive"
-	// 			objectFit="contain"
-	// 		/>
-	// 	</div>
-	// ));
 
 	return (
 		<div className="flex flex-col justify-between w-full ">
