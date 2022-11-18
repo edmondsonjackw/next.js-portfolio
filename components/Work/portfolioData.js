@@ -97,19 +97,19 @@ export const portfolioData = [
 		],
 		href: "https://je-meme-generator.netlify.app/",
 	},
-	{
-		id: 4,
-		title: "Accordion",
-		resources: ["HTML", "CSS", "ReactJS"],
-		description:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-		src: [
-			"/expenses-tracker-2.png",
-			"/expenses-tracker-3.png",
-			"/expenses-tracker-4.png",
-		],
+	// {
+	// 	id: 4,
+	// 	title: "Accordion",
+	// 	resources: ["HTML", "CSS", "ReactJS"],
+	// 	description:
+	// 		"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+	// 	src: [
+	// 		"/expenses-tracker-2.png",
+	// 		"/expenses-tracker-3.png",
+	// 		"/expenses-tracker-4.png",
+	// 	],
 
-		description: "",
-		href: "",
-	},
+	// 	description: "",
+	// 	href: "",
+	// },
 ];
