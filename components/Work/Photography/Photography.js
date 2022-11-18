@@ -35,6 +35,7 @@ function Photography(props) {
 				// height={1545}
 				objectFit="cover"
 				layout="responsive"
+				alt=""
 			/>
 		</div>
 	));

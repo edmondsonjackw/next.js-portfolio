@@ -39,14 +39,14 @@ function ProjectCard(props) {
 
 	return (
 		<div className="flex flex-col justify-between w-full ">
-			<div className="w-full pt-24 flex justify-between items-center">
+			<div className="w-full pt-24 px-3 sm:px-5 md:px-5 lg:px-6 flex justify-between items-center">
 				<Anchor
 					icon="arrow"
 					href={props.href}
 					name="projectLink"
 					src="/project-arrow.svg"
-					width="24"
-					height="24"
+					width="32"
+					height="32"
 					target="_blank"
 					pCard
 				/>
@@ -55,8 +55,8 @@ function ProjectCard(props) {
 					icon="expand"
 					name="expand"
 					src="/expand.svg"
-					width="24"
-					height="24"
+					width="32"
+					height="32"
 					onClickFunction={(event) => handleModal(event, props.id)}
 					// id={props.id}
 					pCard
@@ -87,7 +87,7 @@ function ProjectCard(props) {
 				) : null}
 			</div>
 
-			<div className="flex justify-center items-center">
+			<div className="flex justify-center items-center gap-4">
 				<Button
 					onClickFunction={(event) => goBackWeb(event, props.id)}
 					icon="chevronLeft"

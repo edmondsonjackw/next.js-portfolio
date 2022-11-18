@@ -11,7 +11,7 @@ function About() {
 			<h2 className="col-span-10 place-self-center">ABOUT</h2>
 			<div className="col-span-10 sm:col-span-6 flex flex-col justify-center items-center mx-auto gap-1 md-gap:2 lg:gap-3 xl:gap-4 sm:items-start text-center sm:text-left max-w-[440px] sm:max-w-none">
 				<p className="">
-					Hi, my name is Jack Edmondson, I'm a front-end developer based in
+					Hi, my name is Jack Edmondson, I&apos;m a front-end developer based in
 					London.
 				</p>
 				{/* Hi, I'm Jack Edmondson. I'm a Front-End Developer based in London and a passionate advocate for the web as a creative medium. */}
@@ -22,8 +22,8 @@ function About() {
 				</p>
 				<p className="pb-1 md-pb:2 lg:pb-3 xl:pb-4">
 					In my spare time you can find me watching Burnley FC, albeit often
-					from afar, or if they're not playing, walking around taking pictures
-					on my 35mm camera.
+					from afar, or if they&apos;re not playing, walking around taking
+					pictures on my 35mm camera.
 				</p>
 				<Button value="CV" border />
 			</div>

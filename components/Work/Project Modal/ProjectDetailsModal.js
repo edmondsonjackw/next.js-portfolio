@@ -42,29 +42,3 @@ function ProjectDetailsModal(props) {
 }
 
 export default ProjectDetailsModal;
-
-// const projectResourcesArray = () =>
-// props.currentProject.map(project => (
-//   <ProjectResourcesCard
-//     key={props.id}
-//     value={props.resources}
-//     currentProjectId={props.currentProjectId}
-//     currentProject={props.currentProject}
-//   />
-// ));
-
-// const projectDescriptionArray = () =>
-// props.currentProject.map(project => (
-//   <ProjectDescriptionCard
-//     value={props.description}
-//     currentProjectId={props.currentProjectId}
-//     currentProject={props.currentProject}
-//   />
-// ));
-
-// return (
-// <div className="border-2 flex flex-col ">
-//   <div className="w-full">{projectResourcesArray}</div>
-//   <div className="w-full">{projectDescriptionArray}</div>
-// </div>
-// );

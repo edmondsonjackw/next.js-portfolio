@@ -60,6 +60,7 @@ function PhotographyModal(props) {
 						// width={1045}
 						objectFit="contain"
 						layout="fill"
+						alt=""
 					/>
 				</div>
 				<Button
