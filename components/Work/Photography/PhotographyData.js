@@ -1,62 +1,62 @@
 export const photographyData = [
 	{
 		id: 1,
-		src: "/../public/photography/photog1.png",
+		src: "/../public/Photography/photog1.png",
 		position: "Horizontal",
 	},
 	{
 		id: 2,
-		src: "/../public/photography/photog2.png",
+		src: "/../public/Photography/photog2.png",
 		position: "Horizontal",
 	},
 	{
 		id: 3,
-		src: "/../public/photography/photog3.png",
+		src: "/../public/Photography/photog3.png",
 		position: "Portrait",
 	},
 	{
 		id: 4,
-		src: "/../public/photography/photog4.png",
+		src: "/../public/Photography/photog4.png",
 		position: "Portrait",
 	},
 	{
 		id: 5,
-		src: "/../public/photography/photog5.png",
+		src: "/../public/Photography/photog5.png",
 		position: "Portrait",
 	},
 	{
 		id: 6,
-		src: "/../public/photography/photog6.png",
+		src: "/../public/Photography/photog6.png",
 		position: "Portrait",
 	},
 	{
 		id: 7,
-		src: "/../public/photography/photog7.png",
+		src: "/../public/Photography/photog7.png",
 		position: "Horizontal",
 	},
 	{
 		id: 8,
-		src: "/../public/photography/photog8.png",
+		src: "/../public/Photography/photog8.png",
 		position: "Portrait",
 	},
 	{
 		id: 9,
-		src: "/../public/photography/photog9.png",
+		src: "/../public/Photography/photog9.png",
 		position: "Horizontal",
 	},
 	{
 		id: 10,
-		src: "/../public/photography/photog10.png",
+		src: "/../public/Photography/photog10.png",
 		position: "Horizontal",
 	},
 	{
 		id: 11,
-		src: "/../public/photography/photog11.png",
+		src: "/../public/Photography/photog11.png",
 		position: "Portrait",
 	},
 	{
 		id: 12,
-		src: "/../public/photography/photog12.png",
+		src: "/../public/Photography/photog12.png",
 		position: "Portrait",
 	},
 	// {

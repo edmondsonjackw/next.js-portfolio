@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { photographyData } from "./PhotographyData";
 import Image from "next/image";
-import PhotographyModal from "./PhotographyModal";
 import { useModalContext } from "../../../Context/ModalContext";
 
 function Photography(props) {
