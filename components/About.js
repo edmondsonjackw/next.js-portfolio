@@ -35,7 +35,7 @@ function About() {
 					height="100%"
 					objectFit="contain"
 					layout="responsive"
-					alt=""
+					alt="self"
 				/>
 			</div>
 			<h2 className="col-span-10 place-self-center">SKILLS</h2>
