@@ -28,7 +28,7 @@ function About() {
 			</div>
 			<div className="grid col-span-10 sm:col-span-4 place-self-center sm:place-self-end w-5/6 h-full">
 				<Image
-					src="/../public/self.png"
+					src="/../self.png"
 					width="100%"
 					height="100%"
 					objectFit="contain"
