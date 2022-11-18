@@ -106,7 +106,7 @@ function ProjectCard(props) {
 				<div className="w-full">
 					<Image
 						src={props.src}
-						alt=""
+						alt="project"
 						width="100%"
 						height="50%"
 						layout="responsive"
