@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { PhotographyData } from "./PhotographyData";
+import { PhotographyData } from "../PhotographyData.js";
 import Image from "next/image";
 import { useModalContext } from "../../../Context/ModalContext";
-
 function Photography(props) {
 	const { handleModal } = useModalContext();
 
