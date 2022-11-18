@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { photographyData } from "./PhotographyData";
+import { photographyData } from "../PhotographyData";
 import Image from "next/image";
 import { useModalContext } from "../../../Context/ModalContext";
 
@@ -29,7 +29,6 @@ function Photography(props) {
 			/>
 		</div>
 	));
-
 	return (
 		// <div className="min-w-screen grid grid-cols-5 gap-4">
 		<div className="w-full flex flex-wrap justify-center relative">
