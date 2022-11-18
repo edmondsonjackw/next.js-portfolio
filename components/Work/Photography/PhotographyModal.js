@@ -24,7 +24,7 @@ function PhotographyModal(props) {
 		<div
 			className={`fixed flex z-10 top-0 left-0 w-full h-full overflow-auto bg-black bg-opacity-25 backdrop-blur-sm`}
 			onClick={props.handleModalClose}>
-			<div className="absolute top-0 right-0">
+			<div className="absolute top-0 right-0 m-4">
 				<Button
 					icon={closeIcon}
 					name="close"
