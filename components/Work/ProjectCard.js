@@ -9,7 +9,7 @@ function ProjectCard(props) {
 
 	return (
 		<div className="flex flex-col justify-between w-full ">
-			<div className="w-full pt-24 px-3 sm:px-5 md:px-5 lg:px-6 flex justify-between items-center">
+			<div className="w-full pt-6 sm:pt-10 md:pt-14 lg:pt-18 xl:pt-24 px-3 sm:px-5 md:px-5 lg:px-6 flex justify-between items-center">
 				<Anchor
 					icon="arrow"
 					name="projectLink"
@@ -19,7 +19,7 @@ function ProjectCard(props) {
 					width="32"
 					height="32"
 					pCard
-					expand
+					responsive
 				/>
 				<h3>{props.title}</h3>
 				<Button
@@ -30,11 +30,11 @@ function ProjectCard(props) {
 					height="32"
 					onClickFunction={(event) => handleModal(event, props.id)}
 					pCard
-					expand
+					responsive
 				/>
 			</div>
 
-			<div className="w-full flex justify-center mb-5">
+			<div className="w-full flex justify-center my-2">
 				{props.displayDarkModeToggle && !props.darkMode ? (
 					<Button
 						icon="lightModeIcon"
@@ -43,6 +43,8 @@ function ProjectCard(props) {
 						width="32"
 						height="32"
 						onClickFunction={props.handleDark}
+						pCard
+						responsive
 					/>
 				) : props.displayDarkModeToggle && props.darkMode ? (
 					<Button
@@ -52,6 +54,8 @@ function ProjectCard(props) {
 						width="32"
 						height="32"
 						onClickFunction={props.handleDark}
+						pCard
+						responsive
 					/>
 				) : null}
 			</div>

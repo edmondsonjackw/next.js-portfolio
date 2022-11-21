@@ -12,11 +12,12 @@ function Anchor(props) {
 	return (
 		<>
 			<a
-				className={`w-fit flex justify-between items-center gap-1 bg-transparent hover:bg-gray-700 rounded-lg text-xs sm:text-base cursor-pointer ${
+				className={`w-fit flex justify-between items-center gap-1 py-2 px-3 sm:px-4 bg-transparent hover:bg-gray-700 rounded-lg text-xs sm:text-base cursor-pointer ${
 					props.border ? "border-primary border-2" : ""
-				} ${!props.pCard ? "py-2 px-3 sm:px-4" : ""} 
+				} 
+				${props.pCard ? "px-0 py-0 sm:px-0 hover:bg-transparent" : ""}
 				${
-					props.expand
+					props.responsive
 						? "h-[12px] w-[12px] sm:h-[24px] sm:w-[24px] md:w-[32px] md:w-[32px]"
 						: "w-fit h-fit"
 				}	

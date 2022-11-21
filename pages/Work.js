@@ -45,7 +45,9 @@ function Work() {
 	));
 	return (
 		<>
-			<div id="work" className="flex justify-center space-x-4 my-10 pt-4 ">
+			<div
+				id="work"
+				className="flex justify-center space-x-4 my-2 sm:my-4 md:my-6 lg:my-8 xl:my-10 pt-4 ">
 				<Button
 					name={"Web Development"}
 					value={"Web Development"}
