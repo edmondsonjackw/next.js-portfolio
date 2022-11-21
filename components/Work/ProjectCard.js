@@ -9,7 +9,7 @@ function ProjectCard(props) {
 
 	return (
 		<div className="flex flex-col justify-between w-full ">
-			<div className="w-full pt-6 sm:pt-10 md:pt-14 lg:pt-18 xl:pt-24 px-3 sm:px-5 md:px-5 lg:px-6 flex justify-between items-center">
+			<div className="w-full pt-6 sm:pt-10 md:pt-14 lg:pt-18 xl:pt-24 px-2 sm:px-5 md:px-5 lg:px-6 flex justify-between items-center">
 				<Anchor
 					icon="arrow"
 					name="projectLink"
@@ -60,7 +60,7 @@ function ProjectCard(props) {
 				) : null}
 			</div>
 
-			<div className="flex justify-center items-center gap-4">
+			<div className="flex justify-center items-center gap-1 sm:gap-4">
 				<Button
 					onClickFunction={(event) =>
 						goBackWeb(
@@ -74,7 +74,9 @@ function ProjectCard(props) {
 					src="/Icons/chevron-left.svg"
 					width="32"
 					height="32"
+					pCard
 				/>
+				{/* SORT HEIGHT HERE */}
 				<div className="w-full">
 					<Image
 						src={props.src}
@@ -98,6 +100,7 @@ function ProjectCard(props) {
 					src="/Icons/chevron-right.svg"
 					width="32"
 					height="32"
+					pCard
 				/>
 			</div>
 		</div>
