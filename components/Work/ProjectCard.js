@@ -19,6 +19,7 @@ function ProjectCard(props) {
 					width="32"
 					height="32"
 					pCard
+					expand
 				/>
 				<h3>{props.title}</h3>
 				<Button
@@ -29,6 +30,7 @@ function ProjectCard(props) {
 					height="32"
 					onClickFunction={(event) => handleModal(event, props.id)}
 					pCard
+					expand
 				/>
 			</div>
 
