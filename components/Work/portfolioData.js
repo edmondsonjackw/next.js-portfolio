@@ -34,7 +34,7 @@ export const portfolioData = [
 	},
 	{
 		id: 1,
-		title: "Text-to-Markdown",
+		title: "Markdown Notes App",
 		resources: ["HTML", "CSS", "ReactJS", "Firebase"],
 		description:
 			"The text-to-markdown notes app was built using React, utilising react-mde, helping simplify the curation of markdown text passages.\n\nUser authentication and database storage was integrated using Firebase, allowing users to access the app on different devices.\nUpon creating a note, users can see creation date and update individual note titles which will dynamically change the routing.\nValidation was added to the contact form using Regex, displaying messages if any fields require changes.",

@@ -5,7 +5,7 @@ import Anchor from "../Anchor";
 import { useModalContext } from "../../Context/ModalContext";
 
 function ProjectCard(props) {
-	const { handleModal, goBackWeb, goForwardWeb } = useModalContext();
+	const { handleModal, darkMode, goBackWeb, goForwardWeb } = useModalContext();
 
 	return (
 		<div className="flex flex-col justify-between w-full ">
@@ -34,7 +34,7 @@ function ProjectCard(props) {
 				/>
 			</div>
 
-			{props.displayDarkModeToggle && !props.darkMode ? (
+			{props.displayDarkModeToggle && !darkMode ? (
 				<div className="w-full flex justify-center my-2">
 					<Button
 						icon="lightModeIcon"
@@ -47,7 +47,7 @@ function ProjectCard(props) {
 						responsive
 					/>
 				</div>
-			) : props.displayDarkModeToggle && props.darkMode ? (
+			) : props.displayDarkModeToggle && darkMode ? (
 				<div className="w-full flex justify-center my-2">
 					<Button
 						icon="darkModeIcon"
@@ -65,12 +65,7 @@ function ProjectCard(props) {
 			<div className="flex justify-center items-center gap-1 sm:gap-4">
 				<Button
 					onClickFunction={(event) =>
-						goBackWeb(
-							event,
-							props.id,
-							props.darkMode,
-							props.displayDarkModeToggle
-						)
+						goBackWeb(event, props.id, darkMode, props.displayDarkModeToggle)
 					}
 					icon="chevronLeft"
 					src="/Icons/chevron-left.svg"
@@ -92,12 +87,7 @@ function ProjectCard(props) {
 				</div>
 				<Button
 					onClickFunction={(event) =>
-						goForwardWeb(
-							event,
-							props.id,
-							props.darkMode,
-							props.displayDarkModeToggle
-						)
+						goForwardWeb(event, props.id, darkMode, props.displayDarkModeToggle)
 					}
 					icon="chevronRight"
 					src="/Icons/chevron-right.svg"

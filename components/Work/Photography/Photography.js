@@ -2,7 +2,8 @@ import React from "react";
 import { PhotographyData } from "../PhotographyData.js";
 import Image from "next/image";
 import { useModalContext } from "../../../Context/ModalContext";
-function Photography(props) {
+
+function Photography() {
 	const { handleModal } = useModalContext();
 
 	const photographyArray = PhotographyData.map((photo) => (

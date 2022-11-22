@@ -9,21 +9,16 @@ import { useModalContext } from "../Context/ModalContext";
 function Work() {
 	const {
 		displayProjectDetailsModal,
-		showPhotographyModal,
-		handleModal,
-		handleModalClose,
-		currentProject,
-		currentProjectId,
 		showWebProjects,
 		setWorkDisplayed,
 		darkMode,
 		setDarkMode,
 	} = useModalContext();
 
-	function handleDark(e) {
+	const handleDark = (e) => {
 		e.preventDefault();
 		setDarkMode((prev) => !prev);
-	}
+	};
 
 	const portfolioArray = portfolioData.map((project) => (
 		<ProjectCard
@@ -39,7 +34,6 @@ function Work() {
 			}
 			href={project.href}
 			displayDarkModeToggle={project.displayDarkModeToggle}
-			darkMode={darkMode}
 			handleDark={handleDark}
 		/>
 	));
@@ -63,29 +57,12 @@ function Work() {
 					showWebProjects={showWebProjects}
 				/>
 			</div>
-			{displayProjectDetailsModal && (
-				<ProjectDetailsModal
-					key={portfolioData.id}
-					handleModal={handleModal}
-					currentProjectId={currentProjectId}
-					currentProject={currentProject}
-					title={currentProject.title}
-					resources={currentProject.resources}
-					description={currentProject.description}
-					handleModalClose={handleModalClose}
-				/>
-			)}
+			{displayProjectDetailsModal ? <ProjectDetailsModal /> : ""}
 			{showWebProjects ? (
 				<>{portfolioArray}</>
 			) : (
 				<>
-					<Photography
-						currentProject={currentProject}
-						currentProjectId={currentProjectId}
-						handleModal={handleModal}
-						handleModalClose={handleModalClose}
-						showPhotographyModal={showPhotographyModal}
-					/>
+					<Photography />
 				</>
 			)}
 		</>

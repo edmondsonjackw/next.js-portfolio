@@ -26,10 +26,10 @@ function ProjectDetailsModal(props) {
 				className={`flex flex-col w-5/6 sm:w-4/6 h-fit m-auto rounded-lg py-3 sm:py-4 px-4 bg-black 900 bg-opacity-70`}>
 				<div className="flex flex-col items-center sm:space-y-4 md:space-y-6 lg:space-y-8 xl:space-y-10">
 					<div className="w-full ">
-						<h3 className="text-center">{props.title}</h3>
+						<h3 className="text-center">{currentProject.title}</h3>
 					</div>
 					<div className="space-y-4">
-						<p className="whitespace-pre-wrap">{props.description}</p>
+						<p className="whitespace-pre-wrap">{currentProject.description}</p>
 						<div className="flex flex-wrap  gap-1 sm:gap-2 md:gap-3 lg:gap-4 w-full">
 							{resourcesArray}
 						</div>
