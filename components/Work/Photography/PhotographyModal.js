@@ -7,10 +7,15 @@ import chevronRight from "next/image";
 import { useModalContext } from "../../../Context/ModalContext";
 
 function PhotographyModal(props) {
-	const { handleModalClose, goBackPicture, goForwardPicture } =
-		useModalContext();
+	const {
+		currentProject,
+		showPhotographyModal,
+		handleModalClose,
+		goBackPhotog,
+		goForwardPhotog,
+	} = useModalContext();
 
-	if (!props.showPhotographyModal) return null;
+	if (!showPhotographyModal) return null;
 
 	return (
 		<div
@@ -30,7 +35,7 @@ function PhotographyModal(props) {
 			<div
 				className={`flex justify-around items-center w-5/6 h-5/6 m-auto rounded-lg py-8 px-4 bg-black 900 bg-opacity-70`}>
 				<Button
-					onClickFunction={goBackPicture}
+					onClickFunction={goBackPhotog}
 					icon={chevronLeft}
 					src="/Icons/chevron-left.svg"
 					width="32"
@@ -38,14 +43,14 @@ function PhotographyModal(props) {
 				/>
 				<div className="relative w-full h-full m-4 ">
 					<Image
-						src={props.currentProject.src}
+						src={currentProject.src}
 						objectFit="contain"
 						layout="fill"
 						alt=""
 					/>
 				</div>
 				<Button
-					onClickFunction={goForwardPicture}
+					onClickFunction={goForwardPhotog}
 					icon={chevronRight}
 					src="/Icons/chevron-right.svg"
 					width="32"

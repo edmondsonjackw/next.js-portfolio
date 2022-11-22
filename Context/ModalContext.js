@@ -9,15 +9,14 @@ export function useModalContext() {
 }
 
 export default function ModalProvider({ children }) {
-	const [displayProjectDetailsModal, setDisplayProjectDetailsModal] =
-		useState(false);
-	const [showPhotographyModal, setShowPhotographyModal] = useState(false);
 	const [portfolioDataArray, setPortfolioDataArray] = useState([]);
 	const [currentProject, setCurrentProject] = useState({});
-	const [currentProjectId, setCurrentProjectId] = useState(0);
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [showWebProjects, setShowWebProjects] = useState(true);
 	const [darkMode, setDarkMode] = useState(false);
+	const [displayProjectDetailsModal, setDisplayProjectDetailsModal] =
+		useState(false);
+	const [showPhotographyModal, setShowPhotographyModal] = useState(false);
 
 	useEffect(() => {
 		setPortfolioDataArray(portfolioData);
@@ -28,7 +27,6 @@ export default function ModalProvider({ children }) {
 		setShowWebProjects((prev) => !prev);
 		handleModalClose();
 		setCurrentProject("");
-		setCurrentProjectId(0);
 		setCurrentIndex(0);
 	}
 
@@ -53,7 +51,6 @@ export default function ModalProvider({ children }) {
 			);
 			setShowPhotographyModal(true);
 		}
-		setCurrentProjectId(id);
 	}
 
 	function handleModalClose() {
@@ -63,11 +60,10 @@ export default function ModalProvider({ children }) {
 			setShowPhotographyModal(false);
 		}
 		setCurrentProject("");
-		setCurrentProjectId(0);
 		setCurrentIndex(0);
 	}
 
-	function goForwardPicture() {
+	function goForwardPhotog() {
 		if (currentIndex === PhotographyData.length - 1) {
 			setCurrentIndex(0);
 			setCurrentProject(PhotographyData[0]);
@@ -77,7 +73,7 @@ export default function ModalProvider({ children }) {
 		}
 	}
 
-	function goBackPicture() {
+	function goBackPhotog() {
 		if (currentIndex === 0) {
 			setCurrentIndex(PhotographyData.length - 1);
 			setCurrentProject(PhotographyData[PhotographyData.length - 1]);
@@ -86,15 +82,6 @@ export default function ModalProvider({ children }) {
 			setCurrentProject(PhotographyData[currentIndex - 1]);
 		}
 	}
-
-	// function goBackWeb(event, id) {
-	// 	event.stopPropagation();
-	// 	const index = id;
-	// 	const newArr = portfolioDataArray[index].src.unshift(
-	// 		portfolioDataArray[index].src.pop()
-	// 	);
-	// 	setPortfolioDataArray(newArr);
-	// }
 
 	function goBackWeb(event, id, darkMode, displayDarkModeToggle) {
 		event.stopPropagation();
@@ -138,12 +125,6 @@ export default function ModalProvider({ children }) {
 		}
 	}
 
-	// console.log(portfolioDataArray);
-	// console.log(portfolioDataArray[currentIndex]);
-	// console.log(currentProject);
-	// console.log(currentProjectId);
-	// console.log(currentIndex);
-
 	const value = {
 		displayProjectDetailsModal,
 		showPhotographyModal,
@@ -155,12 +136,9 @@ export default function ModalProvider({ children }) {
 		handleModalClose,
 		currentProject,
 		setCurrentProject,
-		currentProjectId,
-		setCurrentProjectId,
 		setCurrentProject,
-		// closePhotogModal,
-		goForwardPicture,
-		goBackPicture,
+		goBackPhotog,
+		goForwardPhotog,
 		goBackWeb,
 		goForwardWeb,
 		portfolioDataArray,

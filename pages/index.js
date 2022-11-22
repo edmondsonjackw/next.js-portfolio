@@ -1,24 +1,18 @@
 import Head from "next/head";
-import Image from "next/image";
-import landingImg from "next/image";
 import Work from "./Work";
 import Main from "./Main";
 import Contact from "./Contact";
 import About from "../components/About";
+import Image from "next/image";
 import { useModalContext } from "../Context/ModalContext";
 import PhotographyModal from "../components/Work/Photography/PhotographyModal";
 
 export default function Home() {
 	const {
-		showPhotographyModal,
-		handleModalClose,
-		pageX,
-		pageY,
 		currentProject,
-		currentProjectId,
-		goForwardPicture,
-		goBackPicture,
-		currentIndex,
+		showPhotographyModal,
+		goForwardPhotog,
+		goBackPhotog,
 	} = useModalContext();
 
 	return (
@@ -35,17 +29,12 @@ export default function Home() {
 				<Work />
 				<About />
 				<Contact />
-
 				<PhotographyModal
-					pageX={pageX}
-					pageY={pageY}
-					onClickFunction={handleModalClose}
-					currentProject={currentProject}
-					currentProjectId={currentProjectId}
+					// currentProject={currentProject}
 					showPhotographyModal={showPhotographyModal}
-					goForwardPicture={goForwardPicture}
-					goBackPicture={goBackPicture}
-					currentIndex={currentIndex}
+					// goBackPhotog={goBackPhotog}
+					// onClickFunction={handleModalClose}
+					// currentIndex={currentIndex}
 				/>
 			</main>
 		</>
