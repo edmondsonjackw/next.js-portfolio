@@ -2,7 +2,9 @@ export const portfolioData = [
 	{
 		id: 0,
 		title: "Expenses Tracker",
+		// resources: ["HTML", "CSS", "ReactJS", "Firebase"],
 		resources: ["HTML", "CSS", "ReactJS", "Firebase"],
+
 		description:
 			"This expenses tracking web application was built with React.\n\nUser account and database storage were integrated through Google's Firebase service, providing users with the ability to register with Google, alongside the classic e-mail/password authentication.\nThe application is divided into three core pages; dashboard, expenses, settings.\nThis is a fully responsive application, enabling usage across a range of devices, alongside this, both a light and dark theme were also integrated into the design of the app to further benefit user experience.",
 		src: {

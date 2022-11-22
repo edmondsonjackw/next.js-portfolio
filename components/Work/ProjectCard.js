@@ -9,7 +9,7 @@ function ProjectCard(props) {
 
 	return (
 		<div className="flex flex-col justify-between w-full ">
-			<div className="w-full pt-6 sm:pt-10 md:pt-14 lg:pt-18 xl:pt-24 px-2 sm:px-5 md:px-5 lg:px-6 flex justify-between items-center">
+			<div className="w-full pt-6 sm:pt-10 md:pt-14 lg:pt-18 xl:pt-24 px-0 sm:px-0 md:px-0 lg:px-0 flex justify-between items-center">
 				<Anchor
 					icon="arrow"
 					name="projectLink"
@@ -34,8 +34,8 @@ function ProjectCard(props) {
 				/>
 			</div>
 
-			<div className="w-full flex justify-center my-2">
-				{props.displayDarkModeToggle && !props.darkMode ? (
+			{props.displayDarkModeToggle && !props.darkMode ? (
+				<div className="w-full flex justify-center my-2">
 					<Button
 						icon="lightModeIcon"
 						name="toggleDark"
@@ -46,7 +46,9 @@ function ProjectCard(props) {
 						pCard
 						responsive
 					/>
-				) : props.displayDarkModeToggle && props.darkMode ? (
+				</div>
+			) : props.displayDarkModeToggle && props.darkMode ? (
+				<div className="w-full flex justify-center my-2">
 					<Button
 						icon="darkModeIcon"
 						name="toggleDark"
@@ -57,8 +59,8 @@ function ProjectCard(props) {
 						pCard
 						responsive
 					/>
-				) : null}
-			</div>
+				</div>
+			) : null}
 
 			<div className="flex justify-center items-center gap-1 sm:gap-4">
 				<Button
@@ -75,6 +77,7 @@ function ProjectCard(props) {
 					width="32"
 					height="32"
 					pCard
+					responsive
 				/>
 				{/* SORT HEIGHT HERE */}
 				<div className="w-full">
@@ -101,6 +104,7 @@ function ProjectCard(props) {
 					width="32"
 					height="32"
 					pCard
+					responsive
 				/>
 			</div>
 		</div>

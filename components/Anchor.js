@@ -12,7 +12,7 @@ function Anchor(props) {
 	return (
 		<>
 			<a
-				className={`w-fit flex justify-between items-center gap-1 py-2 px-3 sm:px-4 bg-transparent hover:bg-gray-700 rounded-lg text-xs sm:text-base cursor-pointer ${
+				className={`flex justify-between items-center gap-1 py-2 px-3 sm:px-4 bg-transparent hover:bg-gray-700 rounded-lg text-xs sm:text-base cursor-pointer ${
 					props.border ? "border-primary border-2" : ""
 				} 
 				${props.pCard ? "px-0 py-0 sm:px-0 hover:bg-transparent" : ""}
