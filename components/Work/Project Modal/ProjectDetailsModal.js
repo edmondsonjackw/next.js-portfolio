@@ -5,8 +5,8 @@ import Skills from "../../Skills";
 
 function ProjectDetailsModal(props) {
 	const { handleModalClose, currentProject } = useModalContext();
-	const resourcesArray = currentProject.resources.map((project) => (
-		<Skills value={project} />
+	const resourcesArray = currentProject.resources.map((project, index) => (
+		<Skills key={index} value={project} />
 	));
 	return (
 		// <div className="w-auto border-2 border-primary rounded-lg py-4 px-6 flex flex-col ">
