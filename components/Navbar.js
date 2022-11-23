@@ -1,7 +1,7 @@
 import React from "react";
 import Anchor from "./Anchor";
 
-function Navbar() {
+const Navbar = () => {
 	return (
 		<nav className="w-fit flex justify-center items-center border-2 border-primary rounded-lg p-1 m-1">
 			<div className="flex space-x-4 justify-between ">
@@ -11,6 +11,6 @@ function Navbar() {
 			</div>
 		</nav>
 	);
-}
+};
 
 export default Navbar;

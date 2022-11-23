@@ -1,6 +1,6 @@
 import React from "react";
 
-function Skills(props) {
+const Skills = (props) => {
 	return (
 		<>
 			<h6
@@ -11,6 +11,6 @@ function Skills(props) {
 			</h6>
 		</>
 	);
-}
+};
 
 export default Skills;

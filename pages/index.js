@@ -5,7 +5,7 @@ import Contact from "./Contact";
 import About from "../components/About";
 import PhotographyModal from "../components/Work/Photography/PhotographyModal";
 
-export default function Home() {
+const Home = () => {
 	return (
 		<>
 			<Head>
@@ -24,4 +24,5 @@ export default function Home() {
 			</main>
 		</>
 	);
-}
+};
+export default Home;

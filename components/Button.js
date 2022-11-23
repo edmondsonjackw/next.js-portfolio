@@ -1,14 +1,14 @@
 import React from "react";
 import Image from "next/image";
 
-function Button(props) {
+const Button = (props) => {
 	return (
 		<>
 			<button
 				className={`flex justify-between items-center gap-2 py-2 px-3 sm:px-4 bg-transparent hover:bg-gray-700 hover:text-primary rounded-lg text-xs sm:text-base cursor-pointer 
 				${
 					props.responsive
-						? "h-[12px] w-[12px] sm:h-[24px] sm:w-[24px] md:w-[32px] md:w-[32px]"
+						? "h-[12px] w-[12px] sm:h-[24px] sm:w-[24px] md:h-[32px] md:w-[32px]"
 						: "w-fit h-fit"
 				}			
 				${props.border ? "border-primary border-2" : ""} 
@@ -41,6 +41,6 @@ function Button(props) {
 			</button>
 		</>
 	);
-}
+};
 
 export default Button;

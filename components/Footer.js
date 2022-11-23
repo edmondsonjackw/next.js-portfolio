@@ -1,7 +1,7 @@
 import React from "react";
 import Anchor from "./Anchor";
 
-function Footer() {
+const Footer = () => {
 	return (
 		<nav className="py-6 flex justify-between border-t-2 border-primary min-w-full">
 			<div className="flex space-x-4">
@@ -21,6 +21,6 @@ function Footer() {
 			/>
 		</nav>
 	);
-}
+};
 
 export default Footer;

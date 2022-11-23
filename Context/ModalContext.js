@@ -1,12 +1,12 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { portfolioData } from "../components/Work/portfolioData.js";
+import { PortfolioData } from "../components/Work/PortfolioData.js";
 import { PhotographyData } from "../components/Work/PhotographyData";
 
 const ModalContext = createContext();
 
-export function useModalContext() {
+export const useModalContext = () => {
 	return useContext(ModalContext);
-}
+};
 
 export default function ModalProvider({ children }) {
 	const [portfolioDataArray, setPortfolioDataArray] = useState([]);
@@ -19,18 +19,18 @@ export default function ModalProvider({ children }) {
 	const [showPhotographyModal, setShowPhotographyModal] = useState(false);
 
 	useEffect(() => {
-		setPortfolioDataArray(portfolioData);
+		setPortfolioDataArray(PortfolioData);
 	}, [portfolioDataArray]);
 
-	function setWorkDisplayed(event) {
+	const setWorkDisplayed = (event) => {
 		event.preventDefault();
 		setShowWebProjects((prev) => !prev);
 		handleModalClose();
 		setCurrentProject("");
 		setCurrentIndex(0);
-	}
+	};
 
-	function handleModal(event, id) {
+	const handleModal = (event, id) => {
 		event.stopPropagation();
 		if (showWebProjects) {
 			setCurrentProject(
@@ -51,9 +51,9 @@ export default function ModalProvider({ children }) {
 			);
 			setShowPhotographyModal(true);
 		}
-	}
+	};
 
-	function handleModalClose() {
+	const handleModalClose = () => {
 		if (showWebProjects) {
 			setDisplayProjectDetailsModal(false);
 		} else {
@@ -61,9 +61,9 @@ export default function ModalProvider({ children }) {
 		}
 		setCurrentProject("");
 		setCurrentIndex(0);
-	}
+	};
 
-	function goForwardPhotog() {
+	const goForwardPhotog = () => {
 		if (currentIndex === PhotographyData.length - 1) {
 			setCurrentIndex(0);
 			setCurrentProject(PhotographyData[0]);
@@ -71,9 +71,9 @@ export default function ModalProvider({ children }) {
 			setCurrentIndex(currentIndex + 1);
 			setCurrentProject(PhotographyData[currentIndex + 1]);
 		}
-	}
+	};
 
-	function goBackPhotog() {
+	const goBackPhotog = () => {
 		if (currentIndex === 0) {
 			setCurrentIndex(PhotographyData.length - 1);
 			setCurrentProject(PhotographyData[PhotographyData.length - 1]);
@@ -81,9 +81,9 @@ export default function ModalProvider({ children }) {
 			setCurrentIndex(currentIndex - 1);
 			setCurrentProject(PhotographyData[currentIndex - 1]);
 		}
-	}
+	};
 
-	function goBackWeb(event, id, darkMode, displayDarkModeToggle) {
+	const goBackWeb = (event, id, darkMode, displayDarkModeToggle) => {
 		event.stopPropagation();
 		const index = id;
 		if (!darkMode && displayDarkModeToggle) {
@@ -102,9 +102,9 @@ export default function ModalProvider({ children }) {
 			);
 			setPortfolioDataArray(newArr);
 		}
-	}
+	};
 
-	function goForwardWeb(event, id, darkMode, displayDarkModeToggle) {
+	const goForwardWeb = (event, id, darkMode, displayDarkModeToggle) => {
 		event.stopPropagation();
 		const index = id;
 		if (!darkMode && displayDarkModeToggle) {
@@ -123,7 +123,7 @@ export default function ModalProvider({ children }) {
 			);
 			setPortfolioDataArray(newArr);
 		}
-	}
+	};
 
 	const value = {
 		displayProjectDetailsModal,

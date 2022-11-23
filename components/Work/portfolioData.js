@@ -1,8 +1,7 @@
-export const portfolioData = [
+export const PortfolioData = [
 	{
 		id: 0,
 		title: "Expenses Tracker",
-		// resources: ["HTML", "CSS", "ReactJS", "Firebase"],
 		resources: ["HTML", "CSS", "ReactJS", "Firebase"],
 
 		description:

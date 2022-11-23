@@ -4,7 +4,7 @@ import Button from "../Button";
 import Anchor from "../Anchor";
 import { useModalContext } from "../../Context/ModalContext";
 
-function ProjectCard(props) {
+const ProjectCard = (props) => {
 	const { handleModal, darkMode, goBackWeb, goForwardWeb } = useModalContext();
 
 	return (
@@ -99,6 +99,6 @@ function ProjectCard(props) {
 			</div>
 		</div>
 	);
-}
+};
 
 export default ProjectCard;

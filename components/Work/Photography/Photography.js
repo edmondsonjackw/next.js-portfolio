@@ -1,9 +1,9 @@
 import React from "react";
-import { PhotographyData } from "../PhotographyData.js";
 import Image from "next/image";
+import { PhotographyData } from "../PhotographyData.js";
 import { useModalContext } from "../../../Context/ModalContext";
 
-function Photography() {
+const Photography = () => {
 	const { handleModal } = useModalContext();
 
 	const photographyArray = PhotographyData.map((photo) => (
@@ -24,10 +24,10 @@ function Photography() {
 		</div>
 	));
 	return (
-		<div className="w-full flex flex-wrap justify-center relative">
+		<section className="w-full flex flex-wrap justify-center relative">
 			{photographyArray}
-		</div>
+		</section>
 	);
-}
+};
 
 export default Photography;

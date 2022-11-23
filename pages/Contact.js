@@ -2,11 +2,11 @@ import React from "react";
 import Footer from "../components/Footer";
 import Anchor from "../components/Anchor";
 
-function Contact() {
+const Contact = () => {
 	return (
-		<div id="contact" className="flex flex-col items-center min-h-screen">
+		<section id="contact" className="flex flex-col items-center min-h-screen">
 			<div className="flex flex-col justify-between items-center m-auto gap-4">
-				<h3 className="italic">Reach out. </h3>
+				<h3 className="italic">Reach out.</h3>
 				<div className="flex gap-4 mt-4">
 					<Anchor
 						href="mailto:edmondson.jackw@gmail.com"
@@ -32,8 +32,8 @@ function Contact() {
 			<div className="place-self-center w-full">
 				<Footer />
 			</div>
-		</div>
+		</section>
 	);
-}
+};
 
 export default Contact;

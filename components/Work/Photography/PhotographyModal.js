@@ -1,12 +1,12 @@
 import React from "react";
+import Image from "next/image";
 import Button from "../../Button";
 import closeIcon from "next/image";
-import Image from "next/image";
 import chevronLeft from "next/image";
 import chevronRight from "next/image";
 import { useModalContext } from "../../../Context/ModalContext";
 
-function PhotographyModal(props) {
+const PhotographyModal = (props) => {
 	const {
 		currentProject,
 		showPhotographyModal,
@@ -59,6 +59,6 @@ function PhotographyModal(props) {
 			</div>
 		</div>
 	);
-}
+};
 
 export default PhotographyModal;

@@ -1,12 +1,12 @@
 import React from "react";
-import { portfolioData } from "../components/Work/portfolioData.js";
+import { PortfolioData } from "../components/Work/PortfolioData.js";
 import ProjectCard from "../components/Work/ProjectCard";
 import Button from "../components/Button";
 import ProjectDetailsModal from "../components/Work/Project Modal/ProjectDetailsModal";
 import Photography from "../components/Work/Photography/Photography";
 import { useModalContext } from "../Context/ModalContext";
 
-function Work() {
+const Work = () => {
 	const {
 		displayProjectDetailsModal,
 		showWebProjects,
@@ -20,7 +20,7 @@ function Work() {
 		setDarkMode((prev) => !prev);
 	};
 
-	const portfolioArray = portfolioData.map((project) => (
+	const portfolioArray = PortfolioData.map((project) => (
 		<ProjectCard
 			key={project.id}
 			id={project.id}
@@ -39,7 +39,7 @@ function Work() {
 	));
 	return (
 		<>
-			<div
+			<section
 				id="work"
 				className="flex justify-center space-x-4 my-2 sm:my-4 md:my-6 lg:my-8 xl:my-10 pt-4 ">
 				<Button
@@ -56,17 +56,17 @@ function Work() {
 					onClickFunction={setWorkDisplayed}
 					showWebProjects={showWebProjects}
 				/>
-			</div>
+			</section>
 			{displayProjectDetailsModal ? <ProjectDetailsModal /> : ""}
 			{showWebProjects ? (
-				<>{portfolioArray}</>
+				<section>{portfolioArray}</section>
 			) : (
-				<>
+				<section>
 					<Photography />
-				</>
+				</section>
 			)}
 		</>
 	);
-}
+};
 
 export default Work;

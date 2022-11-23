@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-function Anchor(props) {
+const Anchor = (props) => {
 	const [displayedWork, setDisplayedWork] = useState(true);
-
-	function workSelector(event) {
-		event.preventDefault();
-		setDisplayedWork(!displayedWork);
-	}
 
 	return (
 		<>
@@ -18,7 +13,7 @@ function Anchor(props) {
 				${props.pCard ? "px-0 py-0 sm:px-0 hover:bg-transparent" : ""}
 				${
 					props.responsive
-						? "h-[12px] w-[12px] sm:h-[24px] sm:w-[24px] md:w-[32px] md:w-[32px]"
+						? "h-[12px] w-[12px] sm:h-[24px] sm:w-[24px] md:h-[32px] md:w-[32px]"
 						: "w-fit h-fit"
 				}	
 				`}
@@ -35,11 +30,10 @@ function Anchor(props) {
 						alt=""
 					/>
 				)}
-
 				{props.value}
 			</a>
 		</>
 	);
-}
+};
 
 export default Anchor;

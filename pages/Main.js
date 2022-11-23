@@ -2,9 +2,11 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Anchor from "../components/Anchor";
 
-function Main() {
+const Main = () => {
 	return (
-		<section className="min-h-screen flex flex-col items-center justify-between px-24 py-10 gap-4">
+		<section
+			id="main"
+			className="min-h-screen flex flex-col items-center justify-between px-24 py-10 gap-4">
 			<div className="flex space-x-4 w-full justify-center sm:justify-end">
 				<Anchor
 					name="github"
@@ -41,6 +43,6 @@ function Main() {
 			</div>
 		</section>
 	);
-}
+};
 
 export default Main;
