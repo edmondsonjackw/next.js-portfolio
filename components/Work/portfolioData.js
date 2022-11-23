@@ -52,6 +52,19 @@ export const PortfolioData = [
 	},
 	{
 		id: 2,
+		title: "Tenzies Game",
+		resources: ["HTML", "CSS", "ReactJS"],
+		description:
+			"Tenzies is a game whereby the player must roll dice and select a number to proceed with, placing those dice to one side. To win, the player must roll the remaining dice until all numbers are the same in the quickest amount of time.\n\nA roll counter and timer were added into the app to allow players to record high scores, which are stored within the browser.",
+		src: [
+			"/Projects/Tenzies/tenzies-1.png",
+			"/Projects/Tenzies/tenzies-2.png",
+			"/Projects/Tenzies/tenzies-3.png",
+		],
+		href: "https://je-tenzies.netlify.app/",
+	},
+	{
+		id: 3,
 		title: "Meme Generator",
 		resources: ["HTML", "CSS", "ReactJS"],
 		description:
@@ -63,21 +76,9 @@ export const PortfolioData = [
 		],
 
 		darkMode: "",
-		href: "https://je-tenzies.netlify.app/",
-	},
-	{
-		id: 3,
-		title: "Tenzies Game",
-		resources: ["HTML", "CSS", "ReactJS"],
-		description:
-			"Tenzies is a game whereby the player must roll dice and select a number to proceed with, placing those dice to one side. To win, the player must roll the remaining dice until all numbers are the same in the quickest amount of time.\n\nA roll counter and timer were added into the app to allow players to record high scores, which are stored within the browser.",
-		src: [
-			"/Projects/Tenzies/tenzies-1.png",
-			"/Projects/Tenzies/tenzies-2.png",
-			"/Projects/Tenzies/tenzies-3.png",
-		],
 		href: "https://je-meme-generator.netlify.app/",
 	},
+
 	// {
 	// 	id: 4,
 	// 	title: "Accordion",
