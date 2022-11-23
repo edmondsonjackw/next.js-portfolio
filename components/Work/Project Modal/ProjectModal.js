@@ -3,7 +3,7 @@ import Button from "../../Button";
 import { useModalContext } from "../../../Context/ModalContext";
 import Skills from "../../Skills";
 
-const ProjectDetailsModal = (props) => {
+const ProjectModal = (props) => {
 	const { handleModalClose, currentProject } = useModalContext();
 	const resourcesArray = currentProject.resources.map((project, index) => (
 		<Skills key={index} value={project} />
@@ -22,8 +22,8 @@ const ProjectDetailsModal = (props) => {
 				/>
 			</div>
 			<div
-				className={`flex flex-col w-5/6 sm:w-4/6 h-fit m-auto rounded-lg py-3 sm:py-4 px-4 bg-black 900 bg-opacity-70`}>
-				<div className="flex flex-col items-center sm:space-y-4 md:space-y-6 lg:space-y-8 xl:space-y-10">
+				className={`flex flex-col w-5/6 sm:w-4/6 h-fit m-auto rounded-lg py-6 sm:py-10 px-8 bg-black 900 bg-opacity-70`}>
+				<div className="flex flex-col items-center space-y-4 md:space-y-6 lg:space-y-8 xl:space-y-10">
 					<div className="w-full ">
 						<h3 className="text-center">{currentProject.title}</h3>
 					</div>
@@ -39,4 +39,4 @@ const ProjectDetailsModal = (props) => {
 	);
 };
 
-export default ProjectDetailsModal;
+export default ProjectModal;

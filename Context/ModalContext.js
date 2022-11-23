@@ -14,8 +14,7 @@ export default function ModalProvider({ children }) {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [showWebProjects, setShowWebProjects] = useState(true);
 	const [darkMode, setDarkMode] = useState(false);
-	const [displayProjectDetailsModal, setDisplayProjectDetailsModal] =
-		useState(false);
+	const [displayProjectModal, setDisplayProjectModal] = useState(false);
 	const [showPhotographyModal, setShowPhotographyModal] = useState(false);
 
 	useEffect(() => {
@@ -41,7 +40,7 @@ export default function ModalProvider({ children }) {
 					return project.id === id;
 				})
 			);
-			setDisplayProjectDetailsModal(true);
+			setDisplayProjectModal(true);
 		} else {
 			setCurrentProject(PhotographyData.find((photo) => photo.id === id));
 			setCurrentIndex(
@@ -55,7 +54,7 @@ export default function ModalProvider({ children }) {
 
 	const handleModalClose = () => {
 		if (showWebProjects) {
-			setDisplayProjectDetailsModal(false);
+			setDisplayProjectModal(false);
 		} else {
 			setShowPhotographyModal(false);
 		}
@@ -126,7 +125,7 @@ export default function ModalProvider({ children }) {
 	};
 
 	const value = {
-		displayProjectDetailsModal,
+		displayProjectModal,
 		showPhotographyModal,
 		setShowPhotographyModal,
 		showWebProjects,

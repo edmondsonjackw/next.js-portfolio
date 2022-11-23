@@ -5,7 +5,7 @@ export const PortfolioData = [
 		resources: ["HTML", "CSS", "ReactJS", "Firebase"],
 
 		description:
-			"This expenses tracking web application was built with React.\n\nUser account and database storage were integrated through Google's Firebase service, providing users with the ability to register with Google, alongside the classic e-mail/password authentication.\nThe application is divided into three core pages; dashboard, expenses, settings.\nThis is a fully responsive application, enabling usage across a range of devices, alongside this, both a light and dark theme were also integrated into the design of the app to further benefit user experience.",
+			"This personal expenses tracking app is divided into three core pages; dashboard, expenses, settings.\nUser account and database storage were integrated through Google's Firebase service, providing users with the ability to register with Google, alongside the classic e-mail/password authentication.\nThis is a fully responsive application, enabling usage across a range of devices. Alongside this, both a light and dark theme were also integrated into the design of the app to further benefit user experience.",
 		src: {
 			light: [
 				"/Projects/Expenses/expenses-1.png",
@@ -36,7 +36,7 @@ export const PortfolioData = [
 		title: "Markdown Notes App",
 		resources: ["HTML", "CSS", "ReactJS", "Firebase"],
 		description:
-			"The text-to-markdown notes app was built using React, utilising react-mde, helping simplify the curation of markdown text passages.\n\nUser authentication and database storage was integrated using Firebase, allowing users to access the app on different devices.\nUpon creating a note, users can see creation date and update individual note titles which will dynamically change the routing.\nValidation was added to the contact form using Regex, displaying messages if any fields require changes.",
+			"The text-to-markdown notes app utilises the react-mde API, helping simplify the curation of markdown text passages.\n\nUser authentication and database storage was integrated using Firebase, allowing users to access the app on different devices.\nUpon creating a note, users can see creation date and update individual note titles which will dynamically change the routing.\nValidation was added to the contact form using Regex, displaying messages if any fields require changes.",
 		src: [
 			"/Projects/T2M/t2m-1.png",
 			"/Projects/T2M/t2m-2.png",

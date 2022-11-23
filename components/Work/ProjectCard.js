@@ -61,8 +61,7 @@ const ProjectCard = (props) => {
 					/>
 				</div>
 			) : null}
-
-			<div className="flex justify-center items-center gap-1 sm:gap-4">
+			<div className="flex justify-center items-center gap-3 sm:gap-4">
 				<Button
 					onClickFunction={(event) =>
 						goBackWeb(event, props.id, darkMode, props.displayDarkModeToggle)
@@ -74,7 +73,6 @@ const ProjectCard = (props) => {
 					pCard
 					responsive
 				/>
-				{/* SORT HEIGHT HERE */}
 				<div className="w-full">
 					<Image
 						src={props.src}

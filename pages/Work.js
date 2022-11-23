@@ -2,13 +2,13 @@ import React from "react";
 import { PortfolioData } from "../components/Work/PortfolioData.js";
 import ProjectCard from "../components/Work/ProjectCard";
 import Button from "../components/Button";
-import ProjectDetailsModal from "../components/Work/Project Modal/ProjectDetailsModal";
+import ProjectModal from "../components/Work/Project Modal/ProjectModal";
 import Photography from "../components/Work/Photography/Photography";
 import { useModalContext } from "../Context/ModalContext";
 
 const Work = () => {
 	const {
-		displayProjectDetailsModal,
+		displayProjectModal,
 		showWebProjects,
 		setWorkDisplayed,
 		darkMode,
@@ -57,7 +57,7 @@ const Work = () => {
 					showWebProjects={showWebProjects}
 				/>
 			</section>
-			{displayProjectDetailsModal ? <ProjectDetailsModal /> : ""}
+			{displayProjectModal ? <ProjectModal /> : ""}
 			{showWebProjects ? (
 				<section>{portfolioArray}</section>
 			) : (
