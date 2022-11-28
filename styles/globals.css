@@ -10,21 +10,6 @@ html,
 body {
 	padding: 0;
 	margin: 0;
-	/* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
-	/* background-color: rgb(255, 255, 255); */
-	/* background: conic-gradient(
-    from 0deg at 50% 19.63%,
-    #d9d9d9 0deg,
-    rgb(4, 0, 255) 360deg
-  ); */
-	/* background: conic-gradient(
-    from 0deg at 50% -1%,
-    rgb(234, 234, 234) 0deg,
-    #ad5d5d 360deg
-  ); */
-	/* background: rgb(161, 161, 161); */
-	/* backdrop-filter: blur(26px); */
 	background: linear-gradient(
 		180deg,
 		#181717 0%,
@@ -35,7 +20,6 @@ body {
 	);
 }
 
-/* rgba(19, 30, 58, 0.75) 52.08%, */
 input:focus-visible,
 textarea:focus-visible {
 	outline: none;
@@ -59,7 +43,6 @@ textarea:focus-visible {
 	}
 	p {
 		@apply text-2xl;
-		/* @apply italic; */
 	}
 }
 
@@ -122,13 +105,3 @@ textarea:focus-visible {
 		@apply text-xs;
 	}
 }
-
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-} */
