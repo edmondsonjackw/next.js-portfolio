@@ -3,11 +3,10 @@ import Anchor from "./Anchor";
 
 const Footer = () => {
 	return (
-		<nav className="py-6 flex justify-between border-t-2 border-primary min-w-full">
+		<footer className="py-6 flex justify-between border-t-2 border-primary min-w-full">
 			<div className="flex space-x-4">
 				<Anchor value="About" name="About" href="#about" border />
 				<Anchor value="Work" name="About" href="#work" border />
-				<Anchor value="Contact" name="Work" href="#contact" border />
 				<Anchor value="CV" name="Contact" href="#" border />
 			</div>
 			<Anchor
@@ -19,7 +18,7 @@ const Footer = () => {
 				height="24"
 				target="_blank"
 			/>
-		</nav>
+		</footer>
 	);
 };
 

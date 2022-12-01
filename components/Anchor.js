@@ -20,6 +20,7 @@ const Anchor = (props) => {
 				name={props.name}
 				disabled={props.disabled}
 				href={props.href}
+				download={props.download}
 				target={props.target}>
 				{props.icon && (
 					<Image

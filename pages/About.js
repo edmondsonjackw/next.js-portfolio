@@ -1,7 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import Button from "./Button";
-import Skills from "./Skills";
+import Button from "../components/Button";
+import Skills from "../components/Skills";
+import { self } from "../public/self.png";
+import Anchor from "../components/Anchor";
 
 const About = () => {
 	return (
@@ -24,11 +26,16 @@ const About = () => {
 					from afar, or if they&apos;re not playing, walking around taking
 					pictures on my 35mm camera.
 				</p>
-				<Button value="CV" border />
+				<Anchor
+					value="CV"
+					href="/../public/jack-edmondson_cv.pdf"
+					download
+					border
+				/>
 			</div>
 			<div className="grid col-span-10 sm:col-span-4 place-self-center sm:place-self-end w-5/6 h-full">
 				<Image
-					src="/../self.png"
+					src="/../public/self.png"
 					width="100%"
 					height="100%"
 					objectFit="contain"

@@ -2,7 +2,7 @@ import Head from "next/head";
 import Work from "./Work";
 import Main from "./Main";
 import Contact from "./Contact";
-import About from "../components/About";
+import About from "./About";
 import PhotographyModal from "../components/Work/Photography/PhotographyModal";
 
 const Home = () => {
