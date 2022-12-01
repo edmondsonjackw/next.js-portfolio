@@ -1,5 +1,5 @@
 import React from "react";
-import { PortfolioData } from "../components/Work/PortfolioData.js";
+import { PortfolioData } from "../components/Work/PortfolioData";
 import ProjectCard from "../components/Work/ProjectCard";
 import Button from "../components/Button";
 import ProjectModal from "../components/Work/Project Modal/ProjectModal";

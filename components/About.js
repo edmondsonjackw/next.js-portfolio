@@ -38,11 +38,11 @@ const About = () => {
 			</div>
 			<h2 className="col-span-10 place-self-center">SKILLS</h2>
 			<div className=" flex col-span-10 justify-center gap-2 sm:gap-4 flex-wrap">
-				<Skills name="HTML" value="HTML" />
-				<Skills name="CSS" value="CSS" />
-				<Skills name="JS" value="JS" />
-				<Skills name="ReactJS" value="ReactJS" />
-				<Skills name="NextJS" value="NextJS" />
+				<Skills name="HTML5" value="HTML5" />
+				<Skills name="CSS3" value="CSS3" />
+				<Skills name="JavaScript" value="JavaScript" />
+				<Skills name="React" value="React" />
+				<Skills name="Next-JS" value="Next.JS" />
 				<Skills name="TailwindCSS" value="TailwindCSS" />
 				<Skills name="Firebase" value="Firebase" />
 				<Skills name="Github" value="Github" />
