@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { PortfolioData } from "../components/Work/PortfolioData.js";
 import { PhotographyData } from "../components/Work/PhotographyData";
+import { PortfolioData } from "../components/Work/PortfolioData";
 
 const ModalContext = createContext();
 
