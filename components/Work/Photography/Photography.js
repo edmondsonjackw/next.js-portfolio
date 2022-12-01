@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { PhotographyData } from "../PhotographyData.js";
+import { PhotographyData } from "../../../Data/PhotographyData.js";
 import { useModalContext } from "../../../Context/ModalContext";
 
 const Photography = () => {

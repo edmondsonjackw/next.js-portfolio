@@ -4,7 +4,7 @@ import Button from "../components/Button";
 import ProjectModal from "../components/Work/Project Modal/ProjectModal";
 import Photography from "../components/Work/Photography/Photography";
 import { useModalContext } from "../Context/ModalContext.js";
-import { PortfolioData } from "../components/Work/PortfolioData";
+import { PortfolioData } from "../Data/PortfolioData";
 
 const Work = () => {
 	const {
