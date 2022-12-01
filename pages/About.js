@@ -26,12 +26,7 @@ const About = () => {
 					from afar, or if they&apos;re not playing, walking around taking
 					pictures on my 35mm camera.
 				</p>
-				<Anchor
-					value="CV"
-					href="/../public/jack-edmondson_cv.pdf"
-					download
-					border
-				/>
+				<Anchor value="CV" href="../jack-edmondson-cv.pdf" download border />
 			</div>
 			<div className="grid col-span-10 sm:col-span-4 place-self-center sm:place-self-end w-5/6 h-full">
 				<Image
