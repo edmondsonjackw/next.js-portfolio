@@ -21,7 +21,7 @@ const ProjectCard = (props) => {
 					pCard
 					responsive
 				/>
-				<h3>{props.title}</h3>
+				<h3 className="mb-4">{props.title}</h3>
 				<Button
 					icon="expand"
 					name="expand"
@@ -77,10 +77,11 @@ const ProjectCard = (props) => {
 					<Image
 						src={props.src}
 						alt="project"
-						width="100%"
-						height="50%"
+						width="0"
+						height="0"
 						layout="responsive"
 						objectFit="contain"
+						className="rounded-xl w-full h-3/6"
 					/>
 				</div>
 				<Button

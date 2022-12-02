@@ -29,11 +29,12 @@ const About = () => {
 			<div className="grid col-span-10 sm:col-span-4 place-self-center sm:place-self-end w-5/6 h-full">
 				<Image
 					src="/self.png"
-					width="100%"
-					height="100%"
+					width="0"
+					height="0"
 					objectFit="contain"
 					layout="responsive"
 					alt="self"
+					className="w-full h-full"
 				/>
 			</div>
 			<h2 className="col-span-10 place-self-center">SKILLS</h2>
@@ -47,8 +48,8 @@ const About = () => {
 				<Skills name="Firebase" value="Firebase" />
 				<Skills name="Github" value="Github" />
 				<Skills name="Figma" value="Figma" />
-				<Skills name="Account-Management" value="Account Management" />
 				<Skills name="Team-Management" value="Team Management" />
+				<Skills name="Account-Management" value="Account Management" />
 				<Skills name="Project-Management" value="Project Management" />
 			</div>
 		</div>

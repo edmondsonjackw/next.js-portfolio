@@ -33,7 +33,7 @@ const PhotographyModal = (props) => {
 				/>
 			</div>
 			<div
-				className={`flex justify-around items-center w-5/6 h-5/6 m-auto rounded-lg py-8 px-4 bg-black 900 bg-opacity-70`}>
+				className={`relative flex justify-evenly items-center w-lg h-4/6 sm:w-4/6 sm:h-5/6 m-auto rounded-lg py-8 px-4 bg-black 900 bg-opacity-70`}>
 				<Button
 					onClickFunction={goBackPhotog}
 					icon={chevronLeft}
@@ -41,12 +41,12 @@ const PhotographyModal = (props) => {
 					width="32"
 					height="32"
 				/>
-				<div className="relative w-full h-full m-4 ">
+				<div className="h-full w-full m-4">
 					<Image
 						src={currentProject.src}
-						objectFit="contain"
-						layout="fill"
-						alt=""
+						width="2000"
+						height="2000"
+						className="rounded-md w-full h-full object-contain"
 					/>
 				</div>
 				<Button

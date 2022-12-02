@@ -10,16 +10,16 @@ const Photography = () => {
 		<div
 			key={photo.id}
 			id={photo.id}
-			className="w-[100px] h-[100px] sm:w-[150px] sm:h-[150px] md:w-[200px] md:h-[200px] lg:w-[300px] lg:h-[300px] xl:-w[350px] xl:h-[350px] grid hover:opacity-70 cursor-pointer transition ease-linear duration-300"
+			className="w-[100px] h-[100px] sm:w-[150px] sm:h-[150px] md:w-[200px] md:h-[200px] lg:w-[300px] lg:h-[300px] xl:w-[350px] xl:h-[350px] grid hover:opacity-70 cursor-pointer transition ease-linear duration-300"
 			onClick={(event) => handleModal(event, photo.id)}>
 			<Image
 				key={photo.id}
 				src={photo.src}
-				width="100%"
-				height="100%"
-				objectFit="cover"
-				layout="responsive"
+				width="1000"
+				height="1000"
+				// layout="responsive"
 				alt="photography"
+				className="w-full h-full object-cover overflow-hidden"
 			/>
 		</div>
 	));
