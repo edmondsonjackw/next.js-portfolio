@@ -18,6 +18,9 @@ module.exports = {
         secondary: ["Nova Square"],
         third: ["MuseoModerno"],
       },
+      maxWidth: {
+        max: "1680px",
+      },
     },
   },
   plugins: [],

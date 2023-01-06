@@ -39,7 +39,7 @@ const About = () => {
         />
       </div>
       <h2 className="col-span-10 place-self-center">SKILLS</h2>
-      <div className=" flex col-span-10 justify-center gap-2 sm:gap-4 flex-wrap">
+      <div className=" flex col-span-10 justify-center gap-2 sm:gap-4 flex-wrap max-w-max mx-auto">
         <Skills name="HTML5" value="HTML5" />
         <Skills name="CSS3" value="CSS3" />
         <Skills name="JavaScript ES6" value="JavaScript" />
