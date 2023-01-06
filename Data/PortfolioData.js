@@ -48,7 +48,7 @@ export const PortfolioData = [
 		],
 
 		darkMode: "",
-		href: "https://t2t-notes-app.netlify.app",
+		href: "https://t2m-notes-app.netlify.app",
 	},
 	{
 		id: 2,
