@@ -51,6 +51,7 @@ const About = () => {
         <Skills name="Bootstrap" value="Bootstrap" />
         <Skills name="HeadlessUI" value="HeadlessUI" />
         <Skills name="Firebase" value="Firebase" />
+        <Skills name="Netlify" value="Netlify" />
         <Skills name="Github" value="Github" />
         <Skills name="Git" value="Git" />
         <Skills name="NPM" value="NPM" />
