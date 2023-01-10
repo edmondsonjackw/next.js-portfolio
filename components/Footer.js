@@ -17,7 +17,7 @@ const Footer = () => {
 			</div>
 			<Anchor
 				name="About"
-				href="https://github.com/Edmndsn"
+				href="https://github.com/edmondsonjackw"
 				icon="github"
 				src="/Icons/github-icon.svg"
 				width="24"

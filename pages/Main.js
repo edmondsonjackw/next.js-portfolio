@@ -10,7 +10,7 @@ const Main = () => {
 			<div className="flex space-x-4 w-full justify-center sm:justify-end">
 				<Anchor
 					name="github"
-					href="https://github.com/Edmndsn"
+					href="https://github.com/edmondsonjackw"
 					icon="github"
 					src={"/Icons/github-icon.svg"}
 					width="24"
