@@ -44,16 +44,16 @@ const About = () => {
         <Skills name="CSS3" value="CSS3" />
         <Skills name="JavaScript ES6" value="JavaScript" />
         <Skills name="React" value="React" />
-        <Skills name="Next.js" value="Next.JS" />
+        <Skills name="Next.js" value="Next.js" />
         <Skills name="Node.js" value="Node.js" />
-        <Skills name="REST APIs" value="TailwindCSS" />
+        <Skills name="REST APIs" value="REST APIs" />
         <Skills name="TailwindCSS" value="TailwindCSS" />
-        <Skills name="Bootstrap" value="TailwindCSS" />
-        <Skills name="HeadlessUI" value="TailwindCSS" />
+        <Skills name="Bootstrap" value="Bootstrap" />
+        <Skills name="HeadlessUI" value="HeadlessUI" />
         <Skills name="Firebase" value="Firebase" />
         <Skills name="Github" value="Github" />
-        <Skills name="Git" value="Github" />
-        <Skills name="NPM" value="Github" />
+        <Skills name="Git" value="Git" />
+        <Skills name="NPM" value="NPM" />
         <Skills name="Figma" value="Figma" />
         <Skills name="Team-Management" value="Team Management" />
         <Skills name="Account-Management" value="Account Management" />
